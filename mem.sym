@@ -1,64 +1,38 @@
-VERSION 5
-BEGIN SYMBOL mem
-SYMBOLTYPE BLOCK
-TIMESTAMP 2014 3 5 10 4 34
-SYMPIN 0 48 Input addra[8:0]
-SYMPIN 0 80 Input dina[31:0]
-SYMPIN 0 112 Input wea
-SYMPIN 0 240 Input clka
-SYMPIN 0 272 Input addrb[8:0]
-SYMPIN 0 304 Input dinb[31:0]
-SYMPIN 0 336 Input web
-SYMPIN 0 464 Input clkb
-SYMPIN 288 48 Output douta[31:0]
-SYMPIN 288 272 Output doutb[31:0]
-RECTANGLE N 32 0 256 496 
-BEGIN DISPLAY 36 48 PIN addra[8:0] ATTR PinName
-    FONT 24 "Arial"
-END DISPLAY
-BEGIN LINE W 0 48 32 48 
-END LINE
-BEGIN DISPLAY 36 80 PIN dina[31:0] ATTR PinName
-    FONT 24 "Arial"
-END DISPLAY
-BEGIN LINE W 0 80 32 80 
-END LINE
-BEGIN DISPLAY 36 112 PIN wea ATTR PinName
-    FONT 24 "Arial"
-END DISPLAY
-LINE N 0 112 32 112 
-BEGIN DISPLAY 36 240 PIN clka ATTR PinName
-    FONT 24 "Arial"
-END DISPLAY
-LINE N 0 240 32 240 
-BEGIN DISPLAY 36 272 PIN addrb[8:0] ATTR PinName
-    FONT 24 "Arial"
-END DISPLAY
-BEGIN LINE W 0 272 32 272 
-END LINE
-BEGIN DISPLAY 36 304 PIN dinb[31:0] ATTR PinName
-    FONT 24 "Arial"
-END DISPLAY
-BEGIN LINE W 0 304 32 304 
-END LINE
-BEGIN DISPLAY 36 336 PIN web ATTR PinName
-    FONT 24 "Arial"
-END DISPLAY
-LINE N 0 336 32 336 
-BEGIN DISPLAY 36 464 PIN clkb ATTR PinName
-    FONT 24 "Arial"
-END DISPLAY
-LINE N 0 464 32 464 
-BEGIN DISPLAY 252 48 PIN douta[31:0] ATTR PinName
-    ALIGNMENT RIGHT
-    FONT 24 "Arial"
-END DISPLAY
-BEGIN LINE W 256 48 288 48 
-END LINE
-BEGIN DISPLAY 252 272 PIN doutb[31:0] ATTR PinName
-    ALIGNMENT RIGHT
-    FONT 24 "Arial"
-END DISPLAY
-BEGIN LINE W 256 272 288 272 
-END LINE
-END SYMBOL
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="mem">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2014-3-18T8:58:43</timestamp>
+    <pin polarity="Input" x="0" y="48" name="addra[8:0]" />
+    <pin polarity="Input" x="0" y="80" name="dina[31:0]" />
+    <pin polarity="Input" x="0" y="112" name="wea" />
+    <pin polarity="Input" x="0" y="240" name="clka" />
+    <pin polarity="Input" x="0" y="272" name="addrb[8:0]" />
+    <pin polarity="Input" x="0" y="304" name="dinb[31:0]" />
+    <pin polarity="Input" x="0" y="336" name="web" />
+    <pin polarity="Input" x="0" y="464" name="clkb" />
+    <pin polarity="Output" x="288" y="48" name="douta[31:0]" />
+    <pin polarity="Output" x="288" y="272" name="doutb[31:0]" />
+    <graph>
+        <rect width="224" x="32" y="0" height="496" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="36" y="48" type="pin addra[8:0]" />
+        <line x2="32" y1="48" y2="48" style="linewidth:W" x1="0" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="36" y="80" type="pin dina[31:0]" />
+        <line x2="32" y1="80" y2="80" style="linewidth:W" x1="0" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="36" y="112" type="pin wea" />
+        <line x2="32" y1="112" y2="112" x1="0" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="36" y="240" type="pin clka" />
+        <line x2="32" y1="240" y2="240" x1="0" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="36" y="272" type="pin addrb[8:0]" />
+        <line x2="32" y1="272" y2="272" style="linewidth:W" x1="0" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="36" y="304" type="pin dinb[31:0]" />
+        <line x2="32" y1="304" y2="304" style="linewidth:W" x1="0" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="36" y="336" type="pin web" />
+        <line x2="32" y1="336" y2="336" x1="0" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="36" y="464" type="pin clkb" />
+        <line x2="32" y1="464" y2="464" x1="0" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="252" y="48" type="pin douta[31:0]" />
+        <line x2="288" y1="48" y2="48" style="linewidth:W" x1="256" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="252" y="272" type="pin doutb[31:0]" />
+        <line x2="288" y1="272" y2="272" style="linewidth:W" x1="256" />
+    </graph>
+</symbol>

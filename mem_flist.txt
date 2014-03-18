@@ -1,12 +1,14 @@
 # Output products list for <mem>
+\_xmsgs\pn_parser.xmsgs
+\mem_flist.txt
 mem.asy
+mem.gise
 mem.mif
 mem.ngc
 mem.sym
 mem.v
 mem.veo
-mem.vhd
-mem.vho
 mem.xco
-mem_flist.txt
+mem.xise
+mem_readme.txt
 mem_xmdf.tcl
