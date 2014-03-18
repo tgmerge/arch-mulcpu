@@ -1,3 +1,10 @@
+Release 13.4 Drc O.87xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Tue Mar 18 16:06:55 2014
+
+drc -z top.ncd top.pcf
+
 WARNING:PhysDesignRules:812 - Dangling pin <DIA0> on
    block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
 WARNING:PhysDesignRules:812 - Dangling pin <DIA1> on

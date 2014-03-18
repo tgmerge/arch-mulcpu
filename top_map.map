@@ -1,46 +1,117 @@
-Release 10.1 Map K.31 (nt)
+Release 13.4 Map O.87xd (nt64)
 Xilinx Map Application Log File for Design 'top'
 
 Design Information
 ------------------
-Command Line   : map -ise D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise -intstyle ise
--p xc3s500e-fg320-4 -cm area -pr off -k 4 -c 100 -o top_map.ncd top.ngd top.pcf 
+Command Line   : map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off
+-c 100 -o top_map.ncd top.ngd top.pcf 
 Target Device  : xc3s500e
 Target Package : fg320
 Target Speed   : -4
-Mapper Version : spartan3e -- $Revision: 1.46 $
-Mapped Date    : Sun Mar 09 19:28:55 2014
+Mapper Version : spartan3e -- $Revision: 1.55 $
+Mapped Date    : Tue Mar 18 16:04:47 2014
 
 Mapping design into LUTs...
 Running directed packing...
 Running delay-based LUT packing...
 Running related packing...
+Updating timing models...
+WARNING:PhysDesignRules:812 - Dangling pin <DIA0> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA1> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA2> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA3> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA4> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA5> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA6> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA7> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA8> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA9> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA10> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA11> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA12> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA13> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA14> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA15> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA16> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA17> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA18> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA19> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA20> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA21> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA22> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA23> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA24> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA25> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA26> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA27> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA28> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA29> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA30> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA31> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
 
 Design Summary
 --------------
 
 Design Summary:
 Number of errors:      0
-Number of warnings:   34
+Number of warnings:   32
 Logic Utilization:
-  Total Number Slice Registers:       1,184 out of   9,312   12%
-    Number used as Flip Flops:          754
-    Number used as Latches:             430
-  Number of 4 input LUTs:             2,330 out of   9,312   25%
+  Total Number Slice Registers:       1,185 out of   9,312   12%
+    Number used as Flip Flops:          769
+    Number used as Latches:             416
+  Number of 4 input LUTs:             2,344 out of   9,312   25%
 Logic Distribution:
-  Number of occupied Slices:          1,599 out of   4,656   34%
-    Number of Slices containing only related logic:   1,599 out of   1,599 100%
-    Number of Slices containing unrelated logic:          0 out of   1,599   0%
+  Number of occupied Slices:          1,622 out of   4,656   34%
+    Number of Slices containing only related logic:   1,622 out of   1,622 100%
+    Number of Slices containing unrelated logic:          0 out of   1,622   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       2,472 out of   9,312   26%
-    Number used as logic:             2,330
-    Number used as a route-thru:        142
-  Number of bonded IOBs:                 22 out of     232    9%
+  Total Number of 4 input LUTs:       2,480 out of   9,312   26%
+    Number used as logic:             2,344
+    Number used as a route-thru:        136
+
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+  Number of bonded IOBs:                 23 out of     232    9%
   Number of RAMB16s:                      1 out of      20    5%
   Number of BUFGMUXs:                     7 out of      24   29%
 
-Peak Memory Usage:  215 MB
-Total REAL time to MAP completion:  3 secs 
+Average Fanout of Non-Clock Nets:                3.32
+
+Peak Memory Usage:  264 MB
+Total REAL time to MAP completion:  12 secs 
 Total CPU time to MAP completion:   3 secs 
 
 NOTES:

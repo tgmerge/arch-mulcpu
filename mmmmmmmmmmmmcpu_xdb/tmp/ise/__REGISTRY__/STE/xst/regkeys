@@ -1,6 +1,0 @@
-CommandLine
-E:\ISE\ISE\bin\nt\unwrapped\xst.exe -ise D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise -intstyle ise -ifn D:/mmmmmmmmmmmmcpu/top.xst -ofn D:/mmmmmmmmmmmmcpu/top.syr -finalclean 1
-s
-FormatString
-xst [-ifn <InputFile>] [-ofn <OutputFile>] [-ise <iseProjectFile>] [--quiet] [-intstyle <Style>] [--deb <DebugLevel>] [--finalclean <Clean>] [--PcubeFlow] [--globOptFlow] [--XstNtrc]
-s
