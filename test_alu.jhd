@@ -1,0 +1,3 @@
+MODULE test_alu
+SUBMODULE alu
+INSTANCE UUT

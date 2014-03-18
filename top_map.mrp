@@ -1,0 +1,355 @@
+Release 10.1 Map K.31 (nt)
+Xilinx Mapping Report File for Design 'top'
+
+Design Information
+------------------
+Command Line   : map -ise D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise -intstyle ise
+-p xc3s500e-fg320-4 -cm area -pr off -k 4 -c 100 -o top_map.ncd top.ngd top.pcf 
+Target Device  : xc3s500e
+Target Package : fg320
+Target Speed   : -4
+Mapper Version : spartan3e -- $Revision: 1.46 $
+Mapped Date    : Sun Mar 09 19:28:55 2014
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:   34
+Logic Utilization:
+  Total Number Slice Registers:       1,184 out of   9,312   12%
+    Number used as Flip Flops:          754
+    Number used as Latches:             430
+  Number of 4 input LUTs:             2,330 out of   9,312   25%
+Logic Distribution:
+  Number of occupied Slices:          1,599 out of   4,656   34%
+    Number of Slices containing only related logic:   1,599 out of   1,599 100%
+    Number of Slices containing unrelated logic:          0 out of   1,599   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:       2,472 out of   9,312   26%
+    Number used as logic:             2,330
+    Number used as a route-thru:        142
+  Number of bonded IOBs:                 22 out of     232    9%
+  Number of RAMB16s:                      1 out of      20    5%
+  Number of BUFGMUXs:                     7 out of      24   29%
+
+Peak Memory Usage:  215 MB
+Total REAL time to MAP completion:  3 secs 
+Total CPU time to MAP completion:   3 secs 
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity - e.g. two
+   LUTs are "related" if they share common inputs.  When assembling slices,
+   Map gives priority to combine logic that is related.  Doing so results in
+   the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin packing
+   unrelated logic into a slice once 99% of the slices are occupied through
+   related logic packing.
+
+   Note that once logic distribution reaches the 99% level through related
+   logic packing, this does not mean the device is completely utilized.
+   Unrelated logic packing will then begin, continuing until all usable LUTs
+   and FFs are occupied.  Depending on your timing budget, increased levels of
+   unrelated logic packing may adversely affect the overall timing performance
+   of your design.
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Modular Design Summary
+Section 11 - Timing Report
+Section 12 - Configuration String Information
+Section 13 - Control Set Information
+Section 14 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:LIT:243 - Logical network x_memory/doutb<31> has no load.
+WARNING:LIT:395 - The above warning message base_net_load_rule is repeated 31
+   more times for the following (max. 5 shown):
+   x_memory/doutb<30>,
+   x_memory/doutb<29>,
+   x_memory/doutb<28>,
+   x_memory/doutb<27>,
+   x_memory/doutb<26>
+   To see the details of these warning messages, please use the -detail switch.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA0> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA1> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA2> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA3> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA4> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA5> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA6> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA7> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA8> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA9> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA10> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA11> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA12> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA13> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA14> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA15> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA16> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA17> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA18> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA19> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA20> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA21> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA22> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA23> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA24> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA25> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA26> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA27> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA28> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA29> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA30> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+WARNING:PhysDesignRules:812 - Dangling pin <DIA31> on
+   block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
+
+Section 3 - Informational
+-------------------------
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:MapLib:159 - Net Timing constraints on signal CCLK are pushed forward
+   through input buffer.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+   4 block(s) optimized away
+  65 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+The signal "x_memory/wea" is sourceless and has been removed.
+The signal "x_memory/doutb<31>" is sourceless and has been removed.
+The signal "x_memory/doutb<30>" is sourceless and has been removed.
+The signal "x_memory/doutb<29>" is sourceless and has been removed.
+The signal "x_memory/doutb<28>" is sourceless and has been removed.
+The signal "x_memory/doutb<27>" is sourceless and has been removed.
+The signal "x_memory/doutb<26>" is sourceless and has been removed.
+The signal "x_memory/doutb<25>" is sourceless and has been removed.
+The signal "x_memory/doutb<24>" is sourceless and has been removed.
+The signal "x_memory/doutb<23>" is sourceless and has been removed.
+The signal "x_memory/doutb<22>" is sourceless and has been removed.
+The signal "x_memory/doutb<21>" is sourceless and has been removed.
+The signal "x_memory/doutb<20>" is sourceless and has been removed.
+The signal "x_memory/doutb<19>" is sourceless and has been removed.
+The signal "x_memory/doutb<18>" is sourceless and has been removed.
+The signal "x_memory/doutb<17>" is sourceless and has been removed.
+The signal "x_memory/doutb<16>" is sourceless and has been removed.
+The signal "x_memory/doutb<15>" is sourceless and has been removed.
+The signal "x_memory/doutb<14>" is sourceless and has been removed.
+The signal "x_memory/doutb<13>" is sourceless and has been removed.
+The signal "x_memory/doutb<12>" is sourceless and has been removed.
+The signal "x_memory/doutb<11>" is sourceless and has been removed.
+The signal "x_memory/doutb<10>" is sourceless and has been removed.
+The signal "x_memory/doutb<9>" is sourceless and has been removed.
+The signal "x_memory/doutb<8>" is sourceless and has been removed.
+The signal "x_memory/doutb<7>" is sourceless and has been removed.
+The signal "x_memory/doutb<6>" is sourceless and has been removed.
+The signal "x_memory/doutb<5>" is sourceless and has been removed.
+The signal "x_memory/doutb<4>" is sourceless and has been removed.
+The signal "x_memory/doutb<3>" is sourceless and has been removed.
+The signal "x_memory/doutb<2>" is sourceless and has been removed.
+The signal "x_memory/doutb<1>" is sourceless and has been removed.
+The signal "x_memory/doutb<0>" is sourceless and has been removed.
+The signal "x_memory/dina<31>" is sourceless and has been removed.
+The signal "x_memory/dina<30>" is sourceless and has been removed.
+The signal "x_memory/dina<29>" is sourceless and has been removed.
+The signal "x_memory/dina<28>" is sourceless and has been removed.
+The signal "x_memory/dina<27>" is sourceless and has been removed.
+The signal "x_memory/dina<26>" is sourceless and has been removed.
+The signal "x_memory/dina<25>" is sourceless and has been removed.
+The signal "x_memory/dina<24>" is sourceless and has been removed.
+The signal "x_memory/dina<23>" is sourceless and has been removed.
+The signal "x_memory/dina<22>" is sourceless and has been removed.
+The signal "x_memory/dina<21>" is sourceless and has been removed.
+The signal "x_memory/dina<20>" is sourceless and has been removed.
+The signal "x_memory/dina<19>" is sourceless and has been removed.
+The signal "x_memory/dina<18>" is sourceless and has been removed.
+The signal "x_memory/dina<17>" is sourceless and has been removed.
+The signal "x_memory/dina<16>" is sourceless and has been removed.
+The signal "x_memory/dina<15>" is sourceless and has been removed.
+The signal "x_memory/dina<14>" is sourceless and has been removed.
+The signal "x_memory/dina<13>" is sourceless and has been removed.
+The signal "x_memory/dina<12>" is sourceless and has been removed.
+The signal "x_memory/dina<11>" is sourceless and has been removed.
+The signal "x_memory/dina<10>" is sourceless and has been removed.
+The signal "x_memory/dina<9>" is sourceless and has been removed.
+The signal "x_memory/dina<8>" is sourceless and has been removed.
+The signal "x_memory/dina<7>" is sourceless and has been removed.
+The signal "x_memory/dina<6>" is sourceless and has been removed.
+The signal "x_memory/dina<5>" is sourceless and has been removed.
+The signal "x_memory/dina<4>" is sourceless and has been removed.
+The signal "x_memory/dina<3>" is sourceless and has been removed.
+The signal "x_memory/dina<2>" is sourceless and has been removed.
+The signal "x_memory/dina<1>" is sourceless and has been removed.
+The signal "x_memory/dina<0>" is sourceless and has been removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+GND 		x_memory/GND
+VCC 		x_memory/VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |             | Strength | Rate |              |          | Delay    |
++----------------------------------------------------------------------------------------------------------------------------------------+
+| BTN2_IN                            | IBUF             | INPUT     | LVTTL       |          |      |              | PULLDOWN | 0 / 0    |
+| BTN3_IN                            | IBUF             | INPUT     | LVTTL       |          |      |              | PULLDOWN | 0 / 0    |
+| CCLK                               | IBUF             | INPUT     | LVCMOS33    |          |      |              |          | 0 / 0    |
+| LCDDAT<0>                          | IOB              | OUTPUT    | LVCMOS33    | 4        | SLOW |              |          | 0 / 0    |
+| LCDDAT<1>                          | IOB              | OUTPUT    | LVCMOS33    | 4        | SLOW |              |          | 0 / 0    |
+| LCDDAT<2>                          | IOB              | OUTPUT    | LVCMOS33    | 4        | SLOW |              |          | 0 / 0    |
+| LCDDAT<3>                          | IOB              | OUTPUT    | LVCMOS33    | 4        | SLOW |              |          | 0 / 0    |
+| LCDE                               | IOB              | OUTPUT    | LVCMOS33    | 4        | SLOW |              |          | 0 / 0    |
+| LCDRS                              | IOB              | OUTPUT    | LVCMOS33    | 4        | SLOW |              |          | 0 / 0    |
+| LCDRW                              | IOB              | OUTPUT    | LVCMOS33    | 4        | SLOW |              |          | 0 / 0    |
+| LED<0>                             | IOB              | OUTPUT    | LVTTL       | 8        | SLOW |              |          | 0 / 0    |
+| LED<1>                             | IOB              | OUTPUT    | LVTTL       | 8        | SLOW |              |          | 0 / 0    |
+| LED<2>                             | IOB              | OUTPUT    | LVTTL       | 8        | SLOW |              |          | 0 / 0    |
+| LED<3>                             | IOB              | OUTPUT    | LVTTL       | 8        | SLOW |              |          | 0 / 0    |
+| LED<4>                             | IOB              | OUTPUT    | LVTTL       | 8        | SLOW |              |          | 0 / 0    |
+| LED<5>                             | IOB              | OUTPUT    | LVTTL       | 8        | SLOW |              |          | 0 / 0    |
+| LED<6>                             | IOB              | OUTPUT    | LVTTL       | 8        | SLOW |              |          | 0 / 0    |
+| LED<7>                             | IOB              | OUTPUT    | LVTTL       | 8        | SLOW |              |          | 0 / 0    |
+| SW<0>                              | IBUF             | INPUT     | LVTTL       |          |      |              | PULLUP   | 0 / 0    |
+| SW<1>                              | IBUF             | INPUT     | LVTTL       |          |      |              | PULLUP   | 0 / 0    |
+| SW<2>                              | IBUF             | INPUT     | LVTTL       |          |      |              | PULLUP   | 0 / 0    |
+| SW<3>                              | IBUF             | INPUT     | LVTTL       |          |      |              | PULLUP   | 0 / 0    |
++----------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Modular Design Summary
+-----------------------------------
+Modular Design not used for this design.
+
+Section 11 - Timing Report
+--------------------------
+This design was not run using timing mode.
+
+Section 12 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 13 - Control Set Information
+------------------------------------
+No control set information for this architecture.
+
+Section 14 - Utilization by Hierarchy
+-------------------------------------
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Module             | Partition | Slices        | Slice Reg     | LUTs          | LUTRAM        | BRAM      | MULT18X18 | BUFG  | DCM   | Full Hierarchical Name   |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| top/               |           | 380/1744      | 430/1184      | 396/2472      | 0/0           | 0/1       | 0/0       | 2/7   | 0/0   | top                      |
+| +C1                |           | 39/39         | 33/33         | 12/12         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | top/C1                   |
+| +M0                |           | 0/374         | 0/115         | 0/693         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | top/M0                   |
+| ++M0               |           | 246/246       | 69/69         | 459/459       | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | top/M0/M0                |
+| ++M1               |           | 128/128       | 46/46         | 234/234       | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | top/M0/M1                |
+| +M1                |           | 4/4           | 5/5           | 2/2           | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | top/M1                   |
+| +M2                |           | 3/3           | 4/4           | 2/2           | 0/0           | 0/0       | 0/0       | 1/1   | 0/0   | top/M2                   |
+| +x_alu_wrapper     |           | 35/90         | 0/0           | 64/161        | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | top/x_alu_wrapper        |
+| ++x_alu            |           | 55/55         | 0/0           | 97/97         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | top/x_alu_wrapper/x_alu  |
+| +x_ctrl            |           | 54/54         | 21/21         | 97/97         | 0/0           | 0/0       | 0/0       | 4/4   | 0/0   | top/x_ctrl               |
+| +x_memory          |           | 0/0           | 0/0           | 0/0           | 0/0           | 1/1       | 0/0       | 0/0   | 0/0   | top/x_memory             |
+| +x_pcm             |           | 32/32         | 32/32         | 64/64         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | top/x_pcm                |
+| +x_reg_wrapper     |           | 20/768        | 0/544         | 37/1045       | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | top/x_reg_wrapper        |
+| ++x_regs           |           | 748/748       | 544/544       | 1008/1008     | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | top/x_reg_wrapper/x_regs |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Slices can be packed with basic elements from multiple hierarchies.
+  Therefore, a slice will be counted in every hierarchical module
+  that each of its packed basic elements belong to.
+** For each column, there are two numbers reported <A>/<B>.
+   <A> is the number of elements that belong to that specific hierarchical module.
+   <B> is the total number of elements from that hierarchical module and any lower level
+   hierarchical modules below.
+*** The LUTRAM column counts all LUTs used as memory including RAM, ROM, and shift registers.

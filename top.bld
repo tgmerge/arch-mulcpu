@@ -1,0 +1,69 @@
+Release 10.1 ngdbuild K.31 (nt)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+
+Command Line: E:\ISE\ISE\bin\nt\unwrapped\ngdbuild.exe -ise
+D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise -intstyle ise -dd _ngo -nt timestamp -i
+-p xc3s500e-fg320-4 top.ngc top.ngd
+
+Reading NGO file "D:/mmmmmmmmmmmmcpu/top.ngc" ...
+Loading design module "D:\mmmmmmmmmmmmcpu/mem.ngc"...
+Reading in constraint information from 'lcd.ucf'...
+Gathering constraint information from source properties...
+Done.
+
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+Checking Partitions ...
+
+Checking expanded design ...
+WARNING:NgdBuild:452 - logical net 'x_memory/wea' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<31>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<30>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<29>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<28>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<27>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<26>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<25>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<24>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<23>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<22>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<21>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<20>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<19>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<18>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<17>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<16>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<15>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<14>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<13>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<12>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<11>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<10>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<9>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<8>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<7>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<6>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<5>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<4>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<3>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<2>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'x_memory/dina<0>' has no driver
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:  33
+
+Total memory usage is 114624 kilobytes
+
+Writing NGD file "top.ngd" ...
+
+Writing NGDBUILD log file "top.bld"...

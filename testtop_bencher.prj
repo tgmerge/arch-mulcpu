@@ -1,0 +1,2 @@
+verilog work "top.v"
+verilog work /Xilinx/ISE/verilog/src/glbl.v

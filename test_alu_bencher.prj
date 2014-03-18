@@ -1,0 +1,2 @@
+verilog work "alu.v"
+verilog work /Xilinx/ISE/verilog/src/glbl.v

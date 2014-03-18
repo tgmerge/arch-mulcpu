@@ -1,0 +1,3 @@
+MODULE testtop
+SUBMODULE top
+INSTANCE UUT
