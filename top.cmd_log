@@ -1,0 +1,92 @@
+xst -ise "/home/scy/arch/1/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.xst" -ofn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "/home/scy/arch/1/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.xst" -ofn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.syr"
+ngdbuild -ise "/home/scy/arch/1/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc3s500e-fg320-4 "top.ngc" top.ngd
+xst -ise "/home/scy/arch/1/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.xst" -ofn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "/home/scy/arch/1/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.xst" -ofn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "/home/scy/arch/1/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.xst" -ofn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "/home/scy/arch/1/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.xst" -ofn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "/home/scy/arch/1/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.xst" -ofn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "/home/scy/arch/1/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.xst" -ofn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "/home/scy/arch/1/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.xst" -ofn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "/home/scy/arch/1/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.xst" -ofn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "/home/scy/arch/1/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.xst" -ofn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "/home/scy/arch/1/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.xst" -ofn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "/home/scy/arch/1/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.xst" -ofn "/home/scy/arch/1/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "D:/mmmmmmmmmmmmcpu/top.xst" -ofn "D:/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "D:/mmmmmmmmmmmmcpu/top.xst" -ofn "D:/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "D:/mmmmmmmmmmmmcpu/top.xst" -ofn "D:/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "D:/mmmmmmmmmmmmcpu/top.xst" -ofn "D:/mmmmmmmmmmmmcpu/top.syr"
+ngdbuild -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc3s500e-fg320-4 "top.ngc" top.ngd
+ngdbuild -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc3s500e-fg320-4 "top.ngc" top.ngd
+xst -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "D:/mmmmmmmmmmmmcpu/top.xst" -ofn "D:/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "D:/mmmmmmmmmmmmcpu/top.xst" -ofn "D:/mmmmmmmmmmmmcpu/top.syr"
+ngdbuild -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc3s500e-fg320-4 "top.ngc" top.ngd
+map -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -p xc3s500e-fg320-4 -cm area -pr off -k 4 -c 100 -o top_map.ncd top.ngd top.pcf
+par -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -w -intstyle ise -ol std -t 1 top_map.ncd top.ncd top.pcf
+trce -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -e 3 -s 4 -xml top top.ncd -o top.twr top.pcf -ucf lcd.ucf
+bitgen -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -f top.ut top.ncd
+xst -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "D:/mmmmmmmmmmmmcpu/top.xst" -ofn "D:/mmmmmmmmmmmmcpu/top.syr"
+ngdbuild -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc3s500e-fg320-4 "top.ngc" top.ngd
+map -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -p xc3s500e-fg320-4 -cm area -pr off -k 4 -c 100 -o top_map.ncd top.ngd top.pcf
+xst -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "D:/mmmmmmmmmmmmcpu/top.xst" -ofn "D:/mmmmmmmmmmmmcpu/top.syr"
+ngdbuild -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc3s500e-fg320-4 "top.ngc" top.ngd
+map -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -p xc3s500e-fg320-4 -cm area -pr off -k 4 -c 100 -o top_map.ncd top.ngd top.pcf
+par -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -w -intstyle ise -ol std -t 1 top_map.ncd top.ncd top.pcf
+trce -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -e 3 -s 4 -xml top top.ncd -o top.twr top.pcf -ucf lcd.ucf
+bitgen -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -f top.ut top.ncd
+xst -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "D:/mmmmmmmmmmmmcpu/top.xst" -ofn "D:/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "D:/mmmmmmmmmmmmcpu/top.xst" -ofn "D:/mmmmmmmmmmmmcpu/top.syr"
+xst -ise "D:/mmmmmmmmmmmmcpu/mmmmmmmmmmmmcpu.ise" -intstyle ise -ifn "D:/mmmmmmmmmmmmcpu/top.xst" -ofn "D:/mmmmmmmmmmmmcpu/top.syr"
+xst -intstyle ise -ifn "Z:/top.xst" -ofn "Z:/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lcd.ucf -p xc3s500e-fg320-4 Z:/top.ngc top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -e 3 -s 4 -n 3 -xml top.twx top.ncd -o top.twr top.pcf -ucf lcd.ucf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "Z:/top.xst" -ofn "Z:/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lcd.ucf -p xc3s500e-fg320-4 Z:/top.ngc top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -e 3 -s 4 -n 3 -xml top.twx top.ncd -o top.twr top.pcf -ucf lcd.ucf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "Z:/top.xst" -ofn "Z:/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lcd.ucf -p xc3s500e-fg320-4 Z:/top.ngc top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -e 3 -s 4 -n 3 -xml top.twx top.ncd -o top.twr top.pcf -ucf lcd.ucf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "Z:/top.xst" -ofn "Z:/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lcd.ucf -p xc3s500e-fg320-4 Z:/top.ngc top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -e 3 -s 4 -n 3 -xml top.twx top.ncd -o top.twr top.pcf -ucf lcd.ucf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "Z:/top.xst" -ofn "Z:/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lcd.ucf -p xc3s500e-fg320-4 Z:/top.ngc top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "Z:/top.xst" -ofn "Z:/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lcd.ucf -p xc3s500e-fg320-4 Z:/top.ngc top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -e 3 -s 4 -n 3 -xml top.twx top.ncd -o top.twr top.pcf -ucf lcd.ucf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "Z:/top.xst" -ofn "Z:/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lcd.ucf -p xc3s500e-fg320-4 Z:/top.ngc top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -e 3 -s 4 -n 3 -xml top.twx top.ncd -o top.twr top.pcf -ucf lcd.ucf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "Z:/top.xst" -ofn "Z:/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lcd.ucf -p xc3s500e-fg320-4 Z:/top.ngc top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -e 3 -s 4 -n 3 -xml top.twx top.ncd -o top.twr top.pcf -ucf lcd.ucf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "Z:/top.xst" -ofn "Z:/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lcd.ucf -p xc3s500e-fg320-4 Z:/top.ngc top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -e 3 -s 4 -n 3 -xml top.twx top.ncd -o top.twr top.pcf -ucf lcd.ucf 
+bitgen -intstyle ise -f top.ut top.ncd 

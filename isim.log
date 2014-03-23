@@ -1,0 +1,18 @@
+Command line:
+   ./test_isim_beh.exe
+     -intstyle  ise
+     -ipchost  localhost
+     -ipcport  1586
+
+Sun Mar 09 18:58:11 2014
+
+WARNING:Simulator:694 - "D:/mmmmmmmmmmmmcpu/test.tfw" Line 61.  Module ctrl does
+   not have a `timescale directive but previous modules do.
+Total Line Count : 233
+ERROR: Signal Unknown signal received
+
+
+ERROR: Signal Unknown signal received
+
+f
+f  

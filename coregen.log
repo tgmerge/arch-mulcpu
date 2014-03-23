@@ -1,0 +1,49 @@
+INFO:sim:172 - Generating IP...
+Applying current project options...
+Finished applying current project options.
+Customizing IP...
+ERROR:coreutil - Did not read Coe File Z:\Memory.coe 
+WARNING:coreutil - WARNING: Default charset GBK not supported, using ISO-8859-1
+   instead
+Finished Customizing.
+Resolving generic values...
+Finished resolving generic values.
+Generating IP...
+WARNING:sim:89 - A core named <mem> already exists in the output directory.
+   Output products for this core may be overwritten.
+Generating Implementation files.
+Generating ISE symbol file...
+WARNING:coreutil - WARNING: Default charset GBK not supported, using ISO-8859-1
+   instead
+Generating NGC file.
+Finished Generation.
+Generating IP instantiation template...
+INFO:sim:993 - The selected IP does not support an ASY schematic symbol.
+INFO:sim:949 - Finished generation of ASY schematic symbol.
+WARNING:sim - The chosen IP does not support an SYM schematic symbol.
+Generating metadata file...
+Generating ISE project...
+XCO file found: mem.xco
+XMDF file found: mem_xmdf.tcl
+Adding Z:/tmp/_cg/mem.asy -view all -origin_type imported
+Adding Z:/tmp/_cg/mem.ngc -view all -origin_type created
+Checking file "Z:/tmp/_cg/mem.ngc" for project device match ...
+File "Z:/tmp/_cg/mem.ngc" device information matches project device.
+Adding Z:/tmp/_cg/mem.sym -view all -origin_type imported
+Adding Z:/tmp/_cg/mem.v -view all -origin_type created
+INFO:HDLCompiler:1845 - Analyzing Verilog file "Z:/tmp/_cg/mem.v" into library
+   work
+INFO:ProjectMgmt - Parsing design hierarchy completed successfully.
+Adding Z:/tmp/_cg/mem.veo -view all -origin_type imported
+INFO:TclTasksC:2116 - The automatic calculation of top has been turned-off.
+   Please set the new top explicitly by running the "project set top" command.
+   To re-calculate the new top automatically, set the "Auto Implementation Top"
+   property to true.
+Top level has been set to "/mem"
+Generating README file...
+Generating FLIST file...
+INFO:sim:948 - Finished FLIST file generation.
+Launching README viewer...
+Moving files to output directory...
+Finished moving files to output directory
+Wrote CGP file for project 'mem'.
