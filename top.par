@@ -1,7 +1,7 @@
 Release 13.4 par O.87xd (nt64)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
-CSZJU-PC::  Sun Mar 23 17:04:01 2014
+CSZJU-PC::  Sun Mar 23 17:18:37 2014
 
 par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
 
@@ -83,13 +83,13 @@ Phase 7.8  Global Placement
 .......................................
 ..
 .....
-Phase 7.8  Global Placement (Checksum:c8111030) REAL time: 8 secs 
+Phase 7.8  Global Placement (Checksum:c8111030) REAL time: 7 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:c8111030) REAL time: 8 secs 
+Phase 8.5  Local Placement Optimization (Checksum:c8111030) REAL time: 7 secs 
 
 Phase 9.18  Placement Optimization
-Phase 9.18  Placement Optimization (Checksum:9b352c31) REAL time: 9 secs 
+Phase 9.18  Placement Optimization (Checksum:9b352c31) REAL time: 8 secs 
 
 Phase 10.5  Local Placement Optimization
 Phase 10.5  Local Placement Optimization (Checksum:9b352c31) REAL time: 9 secs 
@@ -103,7 +103,7 @@ Writing design to file top.ncd
 Starting Router
 
 
-Phase  1  : 10914 unrouted;      REAL time: 13 secs 
+Phase  1  : 10914 unrouted;      REAL time: 12 secs 
 
 Phase  2  : 10170 unrouted;      REAL time: 13 secs 
 
@@ -124,7 +124,7 @@ WARNING:Route:455 - CLK Net:C1/clk may have excessive skew because
       0 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
 
 Total REAL time to Router completion: 17 secs 
-Total CPU time to Router completion: 12 secs 
+Total CPU time to Router completion: 13 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -188,8 +188,8 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 1 mins 20 secs 
-Total CPU time to PAR completion: 15 secs 
+Total REAL time to PAR completion: 1 mins 18 secs 
+Total CPU time to PAR completion: 16 secs 
 
 Peak Memory Usage:  328 MB
 
