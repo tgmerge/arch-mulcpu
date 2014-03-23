@@ -60,6 +60,7 @@ output wire [7:0]LED, output wire LCDE, LCDRS, LCDRW, output wire [3:0]LCDDAT);
     reg [31:0]     pc_old;
     reg [31:0]     raddr_old;
     reg [31:0]     waddr_old;
+    reg [31:0]     alu_out_old;
 
     wire [3:0]     lcdd;
     wire rslcd, rwlcd, elcd;
@@ -80,7 +81,7 @@ output wire [7:0]LED, output wire LCDE, LCDRS, LCDRW, output wire [3:0]LCDDAT);
     display M0 (CCLK, cls, strdata, rslcd, rwlcd, elcd, lcdd);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 
     always @(CCLK) begin
-        if ((BTN3 == 1'b1) || (mem_data != mem_data_old) || (pc != pc_old) || (raddr != raddr_old) || (waddr != waddr_old)) begin
+        if ((BTN3 == 1'b1) || (mem_data != mem_data_old) || (pc != pc_old) || (raddr != raddr_old) || (waddr != waddr_old) || (alu_out != alu_out_old)) begin
             //first line: instruction data
             strdata[255:248] = (mem_data[31:28]<10)?(8'h30 + mem_data[31:28]):(8'h37 + mem_data[31:28]);
             strdata[247:240] = (mem_data[27:24]<10)?(8'h30 + mem_data[27:24]):(8'h37 + mem_data[27:24]);
@@ -109,7 +110,7 @@ output wire [7:0]LED, output wire LCDE, LCDRS, LCDRW, output wire [3:0]LCDDAT);
             strdata[71:64] = (pc[3:0]<10)?(8'h30 + pc[3:0]):(8'h37 + pc[3:0]);
 
             //register content
-            strdata[55:48] = (alu_ctrl[1:0]<10)?(8'h30 + alu_ctrl[1:0]):(8'h37 + alu_ctrl[1:0]);
+            //strdata[55:48] = (alu_ctrl[1:0]<10)?(8'h30 + alu_ctrl[1:0]):(8'h37 + alu_ctrl[1:0]);
 
             //alu-out
             strdata[31:24] = (alu_out[15:12]<10)?(8'h30 + alu_out[15:12]):(8'h37 + alu_out[15:12]);
@@ -123,6 +124,7 @@ output wire [7:0]LED, output wire LCDE, LCDRS, LCDRW, output wire [3:0]LCDDAT);
             mem_data_old <= mem_data;
             raddr_old <= raddr;
             waddr_old <= waddr;
+            alu_out_old <= alu_out;
         end
         else
             cls = 0;
