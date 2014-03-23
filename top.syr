@@ -4,13 +4,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: top.prj
 
@@ -175,8 +175,8 @@ Analyzing hierarchy for module <ctrl> in library <work> with parameters.
 	LED_WB = "0101"
 	MEM_RD = "0101"
 	MEM_ST = "0111"
-	NOR = "10"
 	OTHER = "1111"
+	SLT = "10"
 	STAGE_EXE = "010"
 	STAGE_ID = "001"
 	STAGE_IF = "000"
@@ -265,8 +265,8 @@ Analyzing module <ctrl> in library <work>.
 	LED_WB = 4'b0101
 	MEM_RD = 4'b0101
 	MEM_ST = 4'b0111
-	NOR = 2'b10
 	OTHER = 4'b1111
+	SLT = 2'b10
 	STAGE_EXE = 3'b010
 	STAGE_ID = 3'b001
 	STAGE_IF = 3'b000
@@ -290,7 +290,7 @@ Analyzing module <alu_wrapper> in library <work>.
 Module <alu_wrapper> is correct for synthesis.
  
 Analyzing module <alu> in library <work>.
-WARNING:Xst:905 - "../alu.v" line 30: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:905 - "../alu.v" line 33: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <a>, <b>
 Module <alu> is correct for synthesis.
  
@@ -493,8 +493,9 @@ Synthesizing Unit <alu>.
     Related source file is "../alu.v".
     Found 32-bit 4-to-1 multiplexer for signal <display_num>.
     Found 32-bit addsub for signal <display_num$addsub0000>.
+    Found 32-bit subtractor for signal <display_num$addsub0001> created at line 37.
     Summary:
-	inferred   1 Adder/Subtractor(s).
+	inferred   2 Adder/Subtractor(s).
 	inferred  32 Multiplexer(s).
 Unit <alu> synthesized.
 
@@ -949,21 +950,21 @@ Design Statistics
 # IOs                              : 23
 
 Cell Usage :
-# BELS                             : 3062
+# BELS                             : 3089
 #      GND                         : 2
 #      INV                         : 51
 #      LUT1                        : 105
-#      LUT2                        : 113
-#      LUT2_D                      : 4
-#      LUT2_L                      : 6
-#      LUT3                        : 739
-#      LUT3_D                      : 7
-#      LUT3_L                      : 9
-#      LUT4                        : 1270
-#      LUT4_D                      : 80
-#      LUT4_L                      : 44
+#      LUT2                        : 122
+#      LUT2_D                      : 5
+#      LUT2_L                      : 5
+#      LUT3                        : 695
+#      LUT3_D                      : 8
+#      LUT3_L                      : 8
+#      LUT4                        : 1339
+#      LUT4_D                      : 53
+#      LUT4_L                      : 55
 #      MUXCY                       : 270
-#      MUXF5                       : 143
+#      MUXF5                       : 152
 #      MUXF6                       : 32
 #      MUXF7                       : 16
 #      VCC                         : 2
@@ -994,9 +995,9 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-4 
 
- Number of Slices:                     1316  out of   4656    28%  
+ Number of Slices:                     1327  out of   4656    28%  
  Number of Slice Flip Flops:           1170  out of   9312    12%  
- Number of 4 input LUTs:               2428  out of   9312    26%  
+ Number of 4 input LUTs:               2446  out of   9312    26%  
  Number of IOs:                          23
  Number of bonded IOBs:                  23  out of    232     9%  
  Number of BRAMs:                         1  out of     20     5%  
@@ -1050,7 +1051,7 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 20.278ns (Maximum Frequency: 49.315MHz)
+   Minimum period: 20.672ns (Maximum Frequency: 48.375MHz)
    Minimum input arrival time before clock: 9.560ns
    Maximum output required time after clock: 4.450ns
    Maximum combinational path delay: No path found
@@ -1061,10 +1062,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'M2/pbreg1'
-  Clock period: 14.519ns (frequency: 68.878MHz)
-  Total number of paths / destination ports: 15027 / 1183
+  Clock period: 13.396ns (frequency: 74.649MHz)
+  Total number of paths / destination ports: 15015 / 1183
 -------------------------------------------------------------------------
-Delay:               14.519ns (Levels of Logic = 30)
+Delay:               13.396ns (Levels of Logic = 28)
   Source:            x_ctrl/alu_srcA (FF)
   Destination:       x_ctrl/write_pc (FF)
   Source Clock:      M2/pbreg1 rising
@@ -1074,8 +1075,8 @@ Delay:               14.519ns (Levels of Logic = 30)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q             33   0.591   1.438  x_ctrl/alu_srcA (x_ctrl/alu_srcA)
-     LUT3:I0->O            2   0.704   0.622  x_alu_wrapper/in_A<0>1 (x_alu_wrapper/in_A<0>)
+     FDE:C->Q             60   0.591   1.446  x_ctrl/alu_srcA (x_ctrl/alu_srcA)
+     LUT3:I0->O            1   0.704   0.595  x_alu_wrapper/in_A<0>1 (x_alu_wrapper/in_A<0>)
      LUT4:I0->O            1   0.704   0.000  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_lut<0> (x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_lut<0>)
      MUXCY:S->O            1   0.464   0.000  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<0> (x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<0>)
      MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<1> (x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<1>)
@@ -1096,32 +1097,30 @@ Delay:               14.519ns (Levels of Logic = 30)
      MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<16> (x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<16>)
      MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<17> (x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<17>)
      MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<18> (x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<18>)
-     MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<19> (x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<19>)
-     XORCY:CI->O           1   0.804   0.499  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_xor<20> (x_alu_wrapper/x_alu/display_num_addsub0000<20>)
-     LUT3:I1->O            3   0.704   0.535  x_alu_wrapper/x_alu/Mmux_display_num26 (alu_out<20>)
-     LUT4:I3->O            1   0.704   0.499  x_ctrl/write_pc_mux0000231 (x_ctrl/write_pc_mux0000231)
-     LUT4_L:I1->LO         1   0.704   0.275  x_ctrl/write_pc_mux0000270 (x_ctrl/write_pc_mux0000270)
-     LUT3:I0->O            1   0.704   0.424  x_ctrl/write_pc_mux0000320 (x_ctrl/write_pc_mux0000320)
-     LUT4:I3->O            1   0.704   0.424  x_ctrl/write_pc_mux0000379_SW0 (N920)
-     LUT4_L:I3->LO         1   0.704   0.179  x_ctrl/write_pc_mux0000379 (x_ctrl/write_pc_mux0000379)
-     LUT2:I1->O            1   0.704   0.000  x_ctrl/write_pc_mux0000391 (x_ctrl/write_pc_mux0000)
+     XORCY:CI->O           1   0.804   0.499  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_xor<19> (x_alu_wrapper/x_alu/display_num_addsub0000<19>)
+     LUT4:I1->O            3   0.704   0.535  x_alu_wrapper/x_alu/Mmux_display_num11 (alu_out<19>)
+     LUT4:I3->O            1   0.704   0.595  x_ctrl/write_pc_mux0000263 (x_ctrl/write_pc_mux0000263)
+     LUT4_L:I0->LO         1   0.704   0.275  x_ctrl/write_pc_mux0000277 (x_ctrl/write_pc_mux0000277)
+     LUT3:I0->O            1   0.704   0.455  x_ctrl/write_pc_mux0000327 (x_ctrl/write_pc_mux0000327)
+     LUT4_L:I2->LO         1   0.704   0.135  x_ctrl/write_pc_mux0000380 (x_ctrl/write_pc_mux0000380)
+     LUT4:I2->O            1   0.704   0.000  x_ctrl/write_pc_mux0000392 (x_ctrl/write_pc_mux0000)
      FDE:D                     0.308          x_ctrl/write_pc
     ----------------------------------------
-    Total                     14.519ns (9.624ns logic, 4.895ns route)
-                                       (66.3% logic, 33.7% route)
+    Total                     13.396ns (8.861ns logic, 4.535ns route)
+                                       (66.1% logic, 33.9% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CCLK'
-  Clock period: 20.278ns (frequency: 49.315MHz)
-  Total number of paths / destination ports: 9246067 / 213
+  Clock period: 20.672ns (frequency: 48.375MHz)
+  Total number of paths / destination ports: 9282066 / 213
 -------------------------------------------------------------------------
-Delay:               20.278ns (Levels of Logic = 28)
+Delay:               20.672ns (Levels of Logic = 28)
   Source:            M0/M0/lcdcount_1 (FF)
-  Destination:       M0/M0/lcdstate_4 (FF)
+  Destination:       M0/M0/lcdstate_6 (FF)
   Source Clock:      CCLK rising
   Destination Clock: CCLK rising
 
-  Data Path: M0/M0/lcdcount_1 to M0/M0/lcdstate_4
+  Data Path: M0/M0/lcdcount_1 to M0/M0/lcdstate_6
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -1143,28 +1142,28 @@ Delay:               20.278ns (Levels of Logic = 28)
      MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_8_addsub0000_cy<14> (M0/M0/Madd_old_lcdcount_8_addsub0000_cy<14>)
      MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_8_addsub0000_cy<15> (M0/M0/Madd_old_lcdcount_8_addsub0000_cy<15>)
      MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_8_addsub0000_cy<16> (M0/M0/Madd_old_lcdcount_8_addsub0000_cy<16>)
-     XORCY:CI->O           8   0.804   0.761  M0/M0/Madd_old_lcdcount_8_addsub0000_xor<17> (M0/M0/old_lcdcount_8_addsub0000<17>)
-     LUT4:I3->O           12   0.704   1.040  M0/M0/old_lcdstate_10_cmp_eq0000140 (M0/M0/old_lcdstate_10_cmp_eq0000140)
-     LUT4_D:I1->O         18   0.704   1.072  M0/M0/old_lcdstate_10_cmp_eq000221 (M0/M0/N741)
-     LUT4_D:I3->O          3   0.704   0.535  M0/M0/_old_lcdcount_11<11>11 (M0/M0/N100)
-     LUT4_D:I3->O         14   0.704   1.079  M0/M0/_old_lcdcount_11<11>79 (M0/M0/_old_lcdcount_11<11>)
-     LUT2:I1->O            1   0.704   0.455  M0/M0/lcdstate_mux0000<32>3_SW3_SW0 (N734)
-     LUT4:I2->O           10   0.704   1.057  M0/M0/_mux0013111 (M0/M0/N351)
-     LUT4:I0->O            3   0.704   0.706  M0/M0/lcdstate_mux0000<32>71 (M0/M0/N118)
-     LUT4:I0->O           17   0.704   1.055  M0/M0/_old_lcdcount_23<4>34 (M0/M0/_old_lcdcount_23<4>)
-     LUT4_L:I3->LO         1   0.704   0.104  M0/M0/lcdstate_mux0000<36>15_SW0_SW0 (N612)
-     LUT4:I3->O            1   0.704   0.420  M0/M0/lcdstate_mux0000<36>16 (M0/M0/lcdstate_mux0000<36>16)
-     FDS:S                     0.911          M0/M0/lcdstate_4
+     XORCY:CI->O          13   0.804   0.987  M0/M0/Madd_old_lcdcount_8_addsub0000_xor<17> (M0/M0/old_lcdcount_8_addsub0000<17>)
+     LUT4:I3->O           11   0.704   0.968  M0/M0/old_lcdstate_10_cmp_eq0000140 (M0/M0/old_lcdstate_10_cmp_eq0000140)
+     LUT4:I2->O            6   0.704   0.673  M0/M0/old_lcdstate_10_cmp_eq000221 (M0/M0/N741)
+     LUT4:I3->O           27   0.704   1.296  M0/M0/lcdstate_cmp_eq0000164 (M0/M0/N104)
+     LUT4:I2->O            2   0.704   0.622  M0/M0/old_lcdstate_14_cmp_eq000011_SW0_SW0 (N733)
+     LUT4:I0->O            9   0.704   0.824  M0/M0/lcdstate_mux0000<32>3 (M0/M0/N54)
+     LUT4:I3->O            7   0.704   0.743  M0/M0/_old_lcdstate_18<7>21 (M0/M0/N98)
+     LUT4:I2->O            4   0.704   0.622  M0/M0/_old_lcdcount_23<5>11 (M0/M0/N751)
+     LUT4:I2->O           10   0.704   0.886  M0/M0/_old_lcdcount_23<6> (M0/M0/_old_lcdcount_23<6>)
+     LUT4_D:I3->O          5   0.704   0.637  M0/M0/lcdstate_mux0000<38>20_SW0 (N485)
+     LUT4:I3->O            1   0.704   0.420  M0/M0/lcdstate_mux0000<34>20 (M0/M0/lcdstate_mux0000<34>20)
+     FDS:S                     0.911          M0/M0/lcdstate_6
     ----------------------------------------
-    Total                     20.278ns (11.399ns logic, 8.879ns route)
-                                       (56.2% logic, 43.8% route)
+    Total                     20.672ns (11.399ns logic, 9.273ns route)
+                                       (55.1% logic, 44.9% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'C1/clk'
-  Clock period: 3.337ns (frequency: 299.651MHz)
+  Clock period: 3.433ns (frequency: 291.273MHz)
   Total number of paths / destination ports: 34 / 10
 -------------------------------------------------------------------------
-Delay:               3.337ns (Levels of Logic = 2)
+Delay:               3.433ns (Levels of Logic = 2)
   Source:            M1/pbreg (FF)
   Destination:       M1/pbreg (FF)
   Source Clock:      C1/clk rising
@@ -1174,13 +1173,13 @@ Delay:               3.337ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q             260   0.591   1.413  M1/pbreg (M1/pbreg)
-     LUT4:I1->O            1   0.704   0.000  M1/pbreg_mux0000_F (N1022)
+     FD:C->Q             260   0.591   1.509  M1/pbreg (M1/pbreg)
+     LUT4:I0->O            1   0.704   0.000  M1/pbreg_mux0000_F (N993)
      MUXF5:I0->O           2   0.321   0.000  M1/pbreg_mux0000 (M1/pbreg_mux0000)
      FD:D                      0.308          M1/pbreg
     ----------------------------------------
-    Total                      3.337ns (1.924ns logic, 1.413ns route)
-                                       (57.7% logic, 42.3% route)
+    Total                      3.433ns (1.924ns logic, 1.509ns route)
+                                       (56.0% logic, 44.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'cls1'
@@ -1227,7 +1226,7 @@ Offset:              3.117ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             3   1.218   0.566  BTN1_IN_IBUF (BTN1_IN_IBUF)
-     LUT4:I2->O            1   0.704   0.000  M3/pbreg_mux0000_F (N1018)
+     LUT4:I2->O            1   0.704   0.000  M3/pbreg_mux0000_F (N989)
      MUXF5:I0->O           1   0.321   0.000  M3/pbreg_mux0000 (M3/pbreg_mux0000)
      FD:D                      0.308          M3/pbreg
     ----------------------------------------
@@ -1275,12 +1274,12 @@ Offset:              4.450ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 45.00 secs
-Total CPU time to Xst completion: 45.82 secs
+Total REAL time to Xst completion: 46.00 secs
+Total CPU time to Xst completion: 46.29 secs
  
 --> 
 
-Total memory usage is 368476 kilobytes
+Total memory usage is 369500 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  196 (   0 filtered)

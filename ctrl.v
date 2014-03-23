@@ -12,7 +12,7 @@ module ctrl(clk, rst, ir_data, zero,
 		OTHER = 4'b1111;
 	
 	// consts for insn_type
-	parameter ADD = 2'b00, SUB = 2'b01, AND = 2'b11, NOR = 2'b10;     						
+	parameter ADD = 2'b00, SUB = 2'b01, AND = 2'b11, SLT = 2'b10;     						
 	parameter LED_IF = 4'b0001, LED_ID = 4'b0010, LED_EX = 4'b0011,
 		LED_MEM =4'b0100, LED_WB = 4'b0101;    					
 	
@@ -131,7 +131,7 @@ module ctrl(clk, rst, ir_data, zero,
 							6'b100000: alu_ctrl <= ADD;
 							6'b100010: alu_ctrl <= SUB;
 							6'b100100: alu_ctrl <= AND;
-							6'b100111: alu_ctrl <= NOR;
+							6'b101010: alu_ctrl <= SLT;
 							default:   alu_ctrl <= ADD;
 						endcase
 						state <=EX_R;
@@ -196,7 +196,7 @@ module ctrl(clk, rst, ir_data, zero,
 					6'b100000: alu_ctrl <= ADD;
 					6'b100010: alu_ctrl <= SUB;
 					6'b100100: alu_ctrl <= AND;
-					6'b100111: alu_ctrl <= NOR;
+					6'b101010: alu_ctrl <= SLT;
 					default:   alu_ctrl <= ADD;
 				endcase
 				state <= WB_R;

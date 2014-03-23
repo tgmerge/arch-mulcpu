@@ -9,7 +9,7 @@ Target Device  : xc3s500e
 Target Package : fg320
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Sun Mar 23 16:03:29 2014
+Mapped Date    : Sun Mar 23 16:36:28 2014
 
 Design Summary
 --------------
@@ -19,15 +19,15 @@ Logic Utilization:
   Total Number Slice Registers:       1,170 out of   9,312   12%
     Number used as Flip Flops:          769
     Number used as Latches:             401
-  Number of 4 input LUTs:             2,318 out of   9,312   24%
+  Number of 4 input LUTs:             2,340 out of   9,312   25%
 Logic Distribution:
-  Number of occupied Slices:          1,624 out of   4,656   34%
-    Number of Slices containing only related logic:   1,624 out of   1,624 100%
-    Number of Slices containing unrelated logic:          0 out of   1,624   0%
+  Number of occupied Slices:          1,620 out of   4,656   34%
+    Number of Slices containing only related logic:   1,620 out of   1,620 100%
+    Number of Slices containing unrelated logic:          0 out of   1,620   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       2,453 out of   9,312   26%
-    Number used as logic:             2,318
-    Number used as a route-thru:        135
+  Total Number of 4 input LUTs:       2,474 out of   9,312   26%
+    Number used as logic:             2,340
+    Number used as a route-thru:        134
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
@@ -36,10 +36,10 @@ Logic Distribution:
   Number of RAMB16s:                      1 out of      20    5%
   Number of BUFGMUXs:                     7 out of      24   29%
 
-Average Fanout of Non-Clock Nets:                3.29
+Average Fanout of Non-Clock Nets:                3.31
 
-Peak Memory Usage:  267 MB
-Total REAL time to MAP completion:  11 secs 
+Peak Memory Usage:  266 MB
+Total REAL time to MAP completion:  10 secs 
 Total CPU time to MAP completion:   3 secs 
 
 NOTES:
