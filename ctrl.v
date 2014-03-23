@@ -3,21 +3,26 @@ module ctrl(clk, rst, ir_data, zero,
 	pcsource, write_c, alu_ctrl, alu_srcA, alu_srcB, write_a, write_b, write_reg,
 	state, insn_type, insn_code, insn_stage);  
 
+	// consts for state(state_out in top.v)
+	// EX for execution
 	parameter IF = 4'b0000, ID = 4'b0001, EX_R = 4'b0010, 
 		EX_LD = 4'b0011, EX_ST = 4'b0100, MEM_RD = 4'b0101, 
 		MEM_ST = 4'b0111, WB_R = 4'b1000, WB_LS = 4'b1001, 
 		EX_BEQ = 4'b1010, EX_J = 4'b1011, BR_BEQ = 4'b1100,
 		OTHER = 4'b1111;
 	
+	// consts for insn_type
 	parameter ADD = 2'b00, SUB = 2'b01, AND = 2'b11, NOR = 2'b10;     						
 	parameter LED_IF = 4'b0001, LED_ID = 4'b0010, LED_EX = 4'b0011,
 		LED_MEM =4'b0100, LED_WB = 4'b0101;    					
-				 
+	
+	// consts for insn_code
 	parameter LED_R = 4'b0001, LED_J = 4'b0010, LED_I = 4'b0011, LED_N = 4'b0000;   		
 	parameter LED_LD = 4'b0001, LED_ST = 4'b0010, LED_AD = 4'b0011,
 		LED_SU = 4'b0100, LED_AN = 4'b0101, LED_NO = 4'b0110,
 		LED_JP = 4'b0111, LED_NI = 4'b0000;  									
 	
+	// consts for insn_stage
 	parameter STAGE_IF = 3'b000, STAGE_ID = 3'b001, STAGE_EXE = 3'b010,
 		STAGE_WB = 3'b100, STAGE_MEM = 3'b011;
 	
