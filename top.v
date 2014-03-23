@@ -81,38 +81,38 @@ output wire [7:0]LED, output wire LCDE, LCDRS, LCDRW, output wire [3:0]LCDDAT);
 
 	always @(CCLK) begin
 		if ((BTN3 == 1'b1) || (mem_data != mem_data_old) || (pc != pc_old) || (raddr != raddr_old) || (waddr != waddr_old)) begin
-			strdata[255:248] = (mem_data[31:28]<9)?(8'h30 + mem_data[31:28]):(8'h41 + mem_data[31:28]);
-			strdata[247:240] = (mem_data[27:24]<9)?(8'h30 + mem_data[27:24]):(8'h41 + mem_data[27:24]);
-			strdata[239:232] = (mem_data[23:20]<9)?(8'h30 + mem_data[23:20]):(8'h41 + mem_data[23:20]);
-			strdata[231:224] = (mem_data[19:16]<9)?(8'h30 + mem_data[19:16]):(8'h41 + mem_data[19:16]);
-			strdata[223:216] = (mem_data[15:12]<9)?(8'h30 + mem_data[15:12]):(8'h41 + mem_data[15:12]);
-			strdata[215:208] = (mem_data[11:8]<9)?(8'h30 + mem_data[11:8]):(8'h41 + mem_data[11:8]);
-			strdata[207:200] = (mem_data[7:4]<9)?(8'h30 + mem_data[7:4]):(8'h41 + mem_data[7:4]);
-			strdata[199:192] = (mem_data[3:0]<9)?(8'h30 + mem_data[3:0]):(8'h41 + mem_data[3:0]);
+			strdata[255:248] = (mem_data[31:28]<10)?(8'h30 + mem_data[31:28]):(8'h37 + mem_data[31:28]);
+			strdata[247:240] = (mem_data[27:24]<10)?(8'h30 + mem_data[27:24]):(8'h37 + mem_data[27:24]);
+			strdata[239:232] = (mem_data[23:20]<10)?(8'h30 + mem_data[23:20]):(8'h37 + mem_data[23:20]);
+			strdata[231:224] = (mem_data[19:16]<10)?(8'h30 + mem_data[19:16]):(8'h37 + mem_data[19:16]);
+			strdata[223:216] = (mem_data[15:12]<10)?(8'h30 + mem_data[15:12]):(8'h37 + mem_data[15:12]);
+			strdata[215:208] = (mem_data[11:8]<10)?(8'h30 + mem_data[11:8]):(8'h37 + mem_data[11:8]);
+			strdata[207:200] = (mem_data[7:4]<10)?(8'h30 + mem_data[7:4]):(8'h37 + mem_data[7:4]);
+			strdata[199:192] = (mem_data[3:0]<10)?(8'h30 + mem_data[3:0]):(8'h37 + mem_data[3:0]);
 			//space
 			//strdata[191:184] = " ";
 			//2 4-bit raddr
-			strdata[183:176] = (raddr[7:4]<9)?(8'h30 + raddr[7:4]):(8'h41 + raddr[7:4]);
-			strdata[175:168] = (raddr[3:0]<9)?(8'h30 + raddr[3:0]):(8'h41 + raddr[3:0]);
+			strdata[183:176] = (raddr[7:4]<10)?(8'h30 + raddr[7:4]):(8'h37 + raddr[7:4]);
+			strdata[175:168] = (raddr[3:0]<10)?(8'h30 + raddr[3:0]):(8'h37 + raddr[3:0]);
 			//space
 			//strdata[167:160] = " ";
 			//2 4-bit waddr
-			strdata[159:152] = (waddr[7:4]<9)?(8'h30 + waddr[7:4]):(8'h41+waddr[7:4]);
-			strdata[151:144] = (waddr[3:0]<9)?(8'h30 + waddr[3:0]):(8'h41+waddr[3:0]);
+			strdata[159:152] = (waddr[7:4]<10)?(8'h30 + waddr[7:4]):(8'h37+waddr[7:4]);
+			strdata[151:144] = (waddr[3:0]<10)?(8'h30 + waddr[3:0]):(8'h37+waddr[3:0]);
 			
 			//secondline
-			strdata[127:120] = (state_out<9)?(8'h30 + state_out):(8'h41 + state_out);
+			strdata[127:120] = (state_out<10)?(8'h30 + state_out):(8'h37 + state_out);
 			//space
-			strdata[111:104] = (insn_type<9)?(8'h30 + insn_type):(8'h41 + insn_type);
+			strdata[111:104] = (insn_type<10)?(8'h30 + insn_type):(8'h37 + insn_type);
 			//space
-			strdata[95:88] = (insn_code<9)?(8'h30 + insn_code):(8'h41 + insn_code);
+			strdata[95:88] = (insn_code<10)?(8'h30 + insn_code):(8'h37 + insn_code);
 			//space
 			//2 4-bit pc
-			strdata[79:72] = (pc[7:4]<9)?(8'h30 + pc[7:4]):(8'h41 + pc[7:4]);
-			strdata[71:64] = (pc[3:0]<9)?(8'h30 + pc[3:0]):(8'h41 + pc[3:0]);
+			strdata[79:72] = (pc[7:4]<10)?(8'h30 + pc[7:4]):(8'h37 + pc[7:4]);
+			strdata[71:64] = (pc[3:0]<10)?(8'h30 + pc[3:0]):(8'h37 + pc[3:0]);
 			//space
 			//strdata[63:56] = " ";
-			strdata[55:24]=(rcontent<9)?(8'h30 +rcontent):(8'h41+rcontent);
+			strdata[55:24]=(rcontent<10)?(8'h30 +rcontent):(8'h37 + rcontent);
 			cls = 1;
 			
 			pc_old <= pc;
