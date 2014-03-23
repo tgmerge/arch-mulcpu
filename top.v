@@ -109,7 +109,13 @@ output wire [7:0]LED, output wire LCDE, LCDRS, LCDRW, output wire [3:0]LCDDAT);
             strdata[71:64] = (pc[3:0]<10)?(8'h30 + pc[3:0]):(8'h37 + pc[3:0]);
 
             //register content
-            strdata[55:24] = (rcontent<10)?(8'h30 + rcontent):(8'h37 + rcontent);
+            strdata[55:48] = (alu_ctrl[1:0]<10)?(8'h30 + alu_ctrl[1:0]):(8'h37 + alu_ctrl[1:0]);
+
+            //alu-out
+            strdata[31:24] = (alu_out[15:12]<10)?(8'h30 + alu_out[15:12]):(8'h37 + alu_out[15:12]);
+            strdata[23:16] = (alu_out[11:8]<10)?(8'h30 + alu_out[11:8]):(8'h37 + alu_out[11:8]);
+            strdata[15:8]  = (alu_out[7:4]<10)?(8'h30 + alu_out[7:4]):(8'h37 + alu_out[7:4]);
+            strdata[7:0]   = (alu_out[3:0]<10)?(8'h30 + alu_out[3:0]):(8'h37 + alu_out[3:0]);
 
             cls = 1;
             

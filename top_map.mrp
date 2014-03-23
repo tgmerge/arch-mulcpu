@@ -9,25 +9,25 @@ Target Device  : xc3s500e
 Target Package : fg320
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Sun Mar 23 17:18:25 2014
+Mapped Date    : Sun Mar 23 18:13:53 2014
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:   34
+Number of warnings:   39
 Logic Utilization:
-  Total Number Slice Registers:       1,170 out of   9,312   12%
-    Number used as Flip Flops:          769
-    Number used as Latches:             401
-  Number of 4 input LUTs:             2,340 out of   9,312   25%
+  Total Number Slice Registers:       1,178 out of   9,312   12%
+    Number used as Flip Flops:          764
+    Number used as Latches:             414
+  Number of 4 input LUTs:             2,023 out of   9,312   21%
 Logic Distribution:
-  Number of occupied Slices:          1,620 out of   4,656   34%
-    Number of Slices containing only related logic:   1,620 out of   1,620 100%
-    Number of Slices containing unrelated logic:          0 out of   1,620   0%
+  Number of occupied Slices:          1,448 out of   4,656   31%
+    Number of Slices containing only related logic:   1,448 out of   1,448 100%
+    Number of Slices containing unrelated logic:          0 out of   1,448   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       2,474 out of   9,312   26%
-    Number used as logic:             2,340
-    Number used as a route-thru:        134
+  Total Number of 4 input LUTs:       2,135 out of   9,312   22%
+    Number used as logic:             2,023
+    Number used as a route-thru:        112
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
@@ -38,7 +38,7 @@ Logic Distribution:
 
 Average Fanout of Non-Clock Nets:                3.31
 
-Peak Memory Usage:  266 MB
+Peak Memory Usage:  264 MB
 Total REAL time to MAP completion:  10 secs 
 Total CPU time to MAP completion:   3 secs 
 
@@ -87,6 +87,16 @@ WARNING:Pack:266 - The function generator strdata_154_mux00001 failed to merge
 WARNING:Pack:266 - The function generator strdata_146_mux00001 failed to merge
    with F5 multiplexer strdata_170_mux0000_f5.  There is a conflict for the
    FXMUX.  The design will exhibit suboptimal timing.
+WARNING:PhysDesignRules:367 - The signal <SW<0>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <SW<1>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <SW<2>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <SW<3>_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <BTN1_IN_IBUF> is incomplete. The
+   signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:812 - Dangling pin <DIA0> on
    block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
 WARNING:PhysDesignRules:812 - Dangling pin <DIA1> on
@@ -154,14 +164,14 @@ WARNING:PhysDesignRules:812 - Dangling pin <DIA31> on
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network x_memory/doutb<31> has no load.
-INFO:LIT:395 - The above info message is repeated 31 more times for the
+INFO:LIT:243 - Logical network BTN1_IN_IBUF has no load.
+INFO:LIT:395 - The above info message is repeated 36 more times for the
    following (max. 5 shown):
-   x_memory/doutb<30>,
-   x_memory/doutb<29>,
-   x_memory/doutb<28>,
-   x_memory/doutb<27>,
-   x_memory/doutb<26>
+   SW<3>_IBUF,
+   SW<2>_IBUF,
+   SW<1>_IBUF,
+   SW<0>_IBUF,
+   x_memory/doutb<31>
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:MapLib:159 - Net Timing constraints on signal CCLK are pushed forward

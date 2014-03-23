@@ -34,7 +34,7 @@ begin
 	case(switch[1:0])
 		2'b00:display_num=a + b;
 		2'b01:display_num=a - b;
-		2'b10:display_num=(a-b<0) ? 1 : 0;
+		2'b10:display_num=(a<b) ? 1'b1 : 1'b0;
 		2'b11:display_num=a & b;
 	endcase
 	end
