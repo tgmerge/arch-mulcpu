@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Map" timeStamp="Sun Mar 23 15:20:34 2014">
+  <application stringID="Map" timeStamp="Sun Mar 23 16:03:39 2014">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -329,8 +329,8 @@
         <item stringID="MAP_INITP_05" value="0000000000000000000000000000000000000000000000000000000000000000"/>
         <item stringID="MAP_INITP_06" value="0000000000000000000000000000000000000000000000000000000000000000"/>
         <item stringID="MAP_INITP_07" value="0000000000000000000000000000000000000000000000000000000000000000"/>
-        <item stringID="MAP_INIT_00" value="08000000ac060016008530270064282400222022002218208c0200158c010014"/>
-        <item stringID="MAP_INIT_01" value="0000000000000000000000000000000000000000000000000000000000000000"/>
+        <item stringID="MAP_INIT_00" value="8c020014ac060016008530270064282400222022002218208c0200158c010014"/>
+        <item stringID="MAP_INIT_01" value="000000000000000000000000000000000000000000000000000000001022fff7"/>
         <item stringID="MAP_INIT_02" value="00000000000000000000beefbeef000000000000000000000000000000000000"/>
         <item stringID="MAP_INIT_03" value="0000000000000000000000000000000000000000000000000000000000000000"/>
         <item stringID="MAP_INIT_04" value="0000000000000000000000000000000000000000000000000000000000000000"/>

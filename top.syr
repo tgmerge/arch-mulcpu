@@ -363,7 +363,7 @@ Synthesizing Unit <ctrl>.
     Related source file is "../ctrl.v".
 WARNING:Xst:647 - Input <ir_data<25:6>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Register <write_b> equivalent to <write_a> has been removed
-    Found 16x3-bit ROM for signal <insn_stage$mux0000> created at line 97.
+    Found 16x3-bit ROM for signal <insn_stage$mux0000> created at line 101.
     Found 1-bit register for signal <write_pc>.
     Found 1-bit register for signal <write_mem>.
     Found 2-bit register for signal <alu_ctrl>.
@@ -1276,7 +1276,7 @@ Offset:              4.450ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 45.00 secs
-Total CPU time to Xst completion: 45.39 secs
+Total CPU time to Xst completion: 45.82 secs
  
 --> 
 
