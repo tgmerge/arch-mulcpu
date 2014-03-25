@@ -1,20 +1,10 @@
 Release 13.4 Drc O.87xd (nt64)
 Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
-Tue Mar 25 16:28:46 2014
+Tue Mar 25 16:47:32 2014
 
 drc -z top.ncd top.pcf
 
-WARNING:PhysDesignRules:367 - The signal <SW<0>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <SW<1>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <SW<2>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <SW<3>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <BTN1_IN_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:812 - Dangling pin <DIA0> on
    block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
 WARNING:PhysDesignRules:812 - Dangling pin <DIA1> on
@@ -79,5 +69,5 @@ WARNING:PhysDesignRules:812 - Dangling pin <DIA30> on
    block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
 WARNING:PhysDesignRules:812 - Dangling pin <DIA31> on
    block:<x_memory/B6.A>:<RAMB16_RAMB16A>.
-DRC detected 0 errors and 37 warnings.  Please see the previously displayed
+DRC detected 0 errors and 32 warnings.  Please see the previously displayed
 individual error or warning messages for more details.

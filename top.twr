@@ -38,7 +38,7 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
 
  9098254 paths analyzed, 649 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is  19.963ns.
+ Minimum period is  19.929ns.
 --------------------------------------------------------------------------------
 
 
@@ -54,7 +54,7 @@ Clock to Setup on destination clock CCLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CCLK           |   19.963|         |         |         |
+CCLK           |   19.929|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -63,20 +63,20 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 9098254 paths, 0 nets, and 2558 connections
+Constraints cover 9098254 paths, 0 nets, and 2559 connections
 
 Design statistics:
-   Minimum period:  19.963ns   (Maximum frequency:  50.093MHz)
+   Minimum period:  19.929ns   (Maximum frequency:  50.178MHz)
 
 
-Analysis completed Tue Mar 25 16:28:37 2014 
+Analysis completed Tue Mar 25 16:47:23 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 187 MB
+Peak Memory Usage: 191 MB
 
 
 
