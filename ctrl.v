@@ -9,7 +9,7 @@ module ctrl(clk, rst, ir_data, zero,
 		EX_LD = 4'b0011, EX_ST = 4'b0100, MEM_RD = 4'b0101, 
 		MEM_ST = 4'b0111, WB_R = 4'b1000, WB_LS = 4'b1001, 
 		EX_BEQ = 4'b1010, EX_J = 4'b1011, BR_BEQ = 4'b1100,
-		OTHER = 4'b1111， EX_BNE = 4'b1101, BR_BNE = 4'b1110;
+		OTHER = 4'b1111, EX_BNE = 4'b1101, BR_BNE = 4'b1110;
 	
 	// consts for insn_type
 	parameter ADD = 2'b00, SUB = 2'b01, AND = 2'b11, SLT = 2'b10;     						

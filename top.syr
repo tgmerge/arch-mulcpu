@@ -3,14 +3,14 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.34 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.36 secs
  
 --> Reading design: top.prj
 
@@ -149,7 +149,9 @@ Analyzing hierarchy for module <ctrl> in library <work> with parameters.
 	ADD = "00"
 	AND = "11"
 	BR_BEQ = "1100"
+	BR_BNE = "1110"
 	EX_BEQ = "1010"
+	EX_BNE = "1101"
 	EX_J = "1011"
 	EX_LD = "0011"
 	EX_R = "0010"
@@ -205,17 +207,17 @@ Analyzing hierarchy for module <alu> in library <work>.
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing top module <top>.
-WARNING:Xst:905 - "../top.v" line 82: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <BTN3>, <mem_data>, <mem_data_old>, <pc>, <pc_old>, <raddr>, <raddr_old>, <waddr>, <waddr_old>, <state_out>, <insn_type>, <insn_code>, <alu_ctrl>, <alu_out>
-WARNING:Xst:905 - "../top.v" line 147: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:905 - "../top.v" line 83: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <BTN3>, <mem_data>, <mem_data_old>, <pc>, <pc_old>, <raddr>, <raddr_old>, <waddr>, <waddr_old>, <alu_out>, <alu_out_old>, <state_out>, <insn_type>, <insn_code>
+WARNING:Xst:905 - "../top.v" line 149: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <mem_data>
-WARNING:Xst:905 - "../top.v" line 152: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:905 - "../top.v" line 154: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <mem_data>
-WARNING:Xst:905 - "../top.v" line 160: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:905 - "../top.v" line 162: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <rdata_A>
-WARNING:Xst:905 - "../top.v" line 165: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:905 - "../top.v" line 167: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <rdata_B>
-WARNING:Xst:905 - "../top.v" line 174: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:905 - "../top.v" line 176: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <alu_out>
 Module <top> is correct for synthesis.
  
@@ -239,7 +241,9 @@ Analyzing module <ctrl> in library <work>.
 	ADD = 2'b00
 	AND = 2'b11
 	BR_BEQ = 4'b1100
+	BR_BNE = 4'b1110
 	EX_BEQ = 4'b1010
+	EX_BNE = 4'b1101
 	EX_J = 4'b1011
 	EX_LD = 4'b0011
 	EX_R = 4'b0010
@@ -317,8 +321,6 @@ INFO:Xst:2679 - Register <strdata<111>> in unit <top> has a constant value of 0 
 INFO:Xst:2679 - Register <strdata<95>> in unit <top> has a constant value of 0 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <strdata<79>> in unit <top> has a constant value of 0 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <strdata<71>> in unit <top> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <strdata<55>> in unit <top> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <strdata<54>> in unit <top> has a constant value of 0 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <strdata<31>> in unit <top> has a constant value of 0 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <strdata<23>> in unit <top> has a constant value of 0 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <strdata<15>> in unit <top> has a constant value of 0 during circuit operation. The register is replaced by logic.
@@ -523,8 +525,7 @@ WARNING:Xst:653 - Signal <strdata<143:128>> is used but never assigned. This sou
 WARNING:Xst:653 - Signal <strdata<119:112>> is used but never assigned. This sourceless signal will be automatically connected to value 00100000.
 WARNING:Xst:653 - Signal <strdata<103:96>> is used but never assigned. This sourceless signal will be automatically connected to value 00100000.
 WARNING:Xst:653 - Signal <strdata<87:80>> is used but never assigned. This sourceless signal will be automatically connected to value 00100000.
-WARNING:Xst:653 - Signal <strdata<63:56>> is used but never assigned. This sourceless signal will be automatically connected to value 00100000.
-WARNING:Xst:653 - Signal <strdata<47:32>> is used but never assigned. This sourceless signal will be automatically connected to value 0010000000100000.
+WARNING:Xst:653 - Signal <strdata<63:32>> is used but never assigned. This sourceless signal will be automatically connected to value 00100000001000000010000000100000.
 WARNING:Xst:646 - Signal <rcontent> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <insn_stage> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <clk_1ms> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
@@ -647,12 +648,6 @@ WARNING:Xst:737 - Found 1-bit latch for signal <strdata_67>. Latches may be gene
 WARNING:Xst:737 - Found 1-bit latch for signal <strdata_66>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <strdata_65>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <strdata_64>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <strdata_53>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <strdata_52>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <strdata_51>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <strdata_50>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <strdata_49>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <strdata_48>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <strdata_30>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <strdata_29>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <strdata_28>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -685,82 +680,83 @@ WARNING:Xst:737 - Found 32-bit latch for signal <pc_old>. Latches may be generat
 WARNING:Xst:737 - Found 32-bit latch for signal <mem_data_old>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 32-bit latch for signal <raddr_old>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 32-bit latch for signal <waddr_old>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 32-bit latch for signal <alu_out_old>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 32-bit latch for signal <ir_data>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 32-bit latch for signal <dr_data>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 32-bit latch for signal <a_data>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 32-bit latch for signal <b_data>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 32-bit latch for signal <c_data>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 32-bit comparator not equal for signal <cls$cmp_ne0000> created at line 83.
-    Found 32-bit comparator not equal for signal <cls$cmp_ne0001> created at line 83.
-    Found 32-bit comparator not equal for signal <cls$cmp_ne0002> created at line 83.
-    Found 32-bit comparator not equal for signal <cls$cmp_ne0003> created at line 83.
-    Found 4-bit comparator less for signal <strdata_110$cmp_lt0000> created at line 104.
-    Found 6-bit adder for signal <strdata_111_104$add0000> created at line 104.
-    Found 6-bit adder carry out for signal <strdata_111_104$addsub0000> created at line 104.
-    Found 4-bit comparator less for signal <strdata_126$cmp_lt0000> created at line 103.
-    Found 6-bit adder for signal <strdata_127_120$add0000> created at line 103.
-    Found 6-bit adder carry out for signal <strdata_127_120$addsub0000> created at line 103.
-    Found 4-bit comparator less for signal <strdata_14$cmp_lt0000> created at line 117.
-    Found 4-bit comparator less for signal <strdata_150$cmp_lt0000> created at line 100.
-    Found 6-bit adder for signal <strdata_151_144$add0000> created at line 100.
-    Found 6-bit adder carry out for signal <strdata_151_144$addsub0000> created at line 100.
-    Found 4-bit comparator less for signal <strdata_158$cmp_lt0000> created at line 99.
-    Found 6-bit adder for signal <strdata_159_152$add0000> created at line 99.
-    Found 6-bit adder carry out for signal <strdata_159_152$addsub0000> created at line 99.
-    Found 6-bit adder for signal <strdata_15_8$add0000> created at line 117.
-    Found 6-bit adder carry out for signal <strdata_15_8$addsub0000> created at line 117.
-    Found 4-bit comparator less for signal <strdata_174$cmp_lt0000> created at line 96.
-    Found 6-bit adder for signal <strdata_175_168$add0000> created at line 96.
-    Found 6-bit adder carry out for signal <strdata_175_168$addsub0000> created at line 96.
-    Found 4-bit comparator less for signal <strdata_182$cmp_lt0000> created at line 95.
-    Found 6-bit adder for signal <strdata_183_176$add0000> created at line 95.
-    Found 6-bit adder carry out for signal <strdata_183_176$addsub0000> created at line 95.
-    Found 4-bit comparator less for signal <strdata_198$cmp_lt0000> created at line 92.
-    Found 6-bit adder for signal <strdata_199_192$add0000> created at line 92.
-    Found 6-bit adder carry out for signal <strdata_199_192$addsub0000> created at line 92.
-    Found 4-bit comparator less for signal <strdata_206$cmp_lt0000> created at line 91.
-    Found 6-bit adder for signal <strdata_207_200$add0000> created at line 91.
-    Found 6-bit adder carry out for signal <strdata_207_200$addsub0000> created at line 91.
-    Found 4-bit comparator less for signal <strdata_214$cmp_lt0000> created at line 90.
-    Found 6-bit adder for signal <strdata_215_208$add0000> created at line 90.
-    Found 6-bit adder carry out for signal <strdata_215_208$addsub0000> created at line 90.
-    Found 4-bit comparator less for signal <strdata_22$cmp_lt0000> created at line 116.
-    Found 4-bit comparator less for signal <strdata_222$cmp_lt0000> created at line 89.
-    Found 6-bit adder for signal <strdata_223_216$add0000> created at line 89.
-    Found 6-bit adder carry out for signal <strdata_223_216$addsub0000> created at line 89.
-    Found 4-bit comparator less for signal <strdata_230$cmp_lt0000> created at line 88.
-    Found 6-bit adder for signal <strdata_231_224$add0000> created at line 88.
-    Found 6-bit adder carry out for signal <strdata_231_224$addsub0000> created at line 88.
-    Found 4-bit comparator less for signal <strdata_238$cmp_lt0000> created at line 87.
-    Found 6-bit adder for signal <strdata_239_232$add0000> created at line 87.
-    Found 6-bit adder carry out for signal <strdata_239_232$addsub0000> created at line 87.
-    Found 6-bit adder for signal <strdata_23_16$add0000> created at line 116.
-    Found 6-bit adder carry out for signal <strdata_23_16$addsub0000> created at line 116.
-    Found 4-bit comparator less for signal <strdata_246$cmp_lt0000> created at line 86.
-    Found 6-bit adder for signal <strdata_247_240$add0000> created at line 86.
-    Found 6-bit adder carry out for signal <strdata_247_240$addsub0000> created at line 86.
-    Found 4-bit comparator less for signal <strdata_254$cmp_lt0000> created at line 85.
-    Found 6-bit adder for signal <strdata_255_248$add0000> created at line 85.
-    Found 6-bit adder carry out for signal <strdata_255_248$addsub0000> created at line 85.
-    Found 4-bit comparator less for signal <strdata_30$cmp_lt0000> created at line 115.
-    Found 6-bit adder for signal <strdata_31_24$add0000> created at line 115.
-    Found 6-bit adder carry out for signal <strdata_31_24$addsub0000> created at line 115.
-    Found 6-bit adder for signal <strdata_55_48$add0000> created at line 112.
-    Found 4-bit comparator less for signal <strdata_6$cmp_lt0000> created at line 118.
-    Found 4-bit comparator less for signal <strdata_70$cmp_lt0000> created at line 109.
-    Found 6-bit adder for signal <strdata_71_64$add0000> created at line 109.
-    Found 6-bit adder carry out for signal <strdata_71_64$addsub0000> created at line 109.
-    Found 4-bit comparator less for signal <strdata_78$cmp_lt0000> created at line 108.
-    Found 6-bit adder for signal <strdata_79_72$add0000> created at line 108.
-    Found 6-bit adder carry out for signal <strdata_79_72$addsub0000> created at line 108.
-    Found 6-bit adder for signal <strdata_7_0$add0000> created at line 118.
-    Found 6-bit adder carry out for signal <strdata_7_0$addsub0000> created at line 118.
-    Found 4-bit comparator less for signal <strdata_94$cmp_lt0000> created at line 105.
-    Found 6-bit adder for signal <strdata_95_88$add0000> created at line 105.
-    Found 6-bit adder carry out for signal <strdata_95_88$addsub0000> created at line 105.
+    Found 32-bit comparator not equal for signal <cls$cmp_ne0000> created at line 84.
+    Found 32-bit comparator not equal for signal <cls$cmp_ne0001> created at line 84.
+    Found 32-bit comparator not equal for signal <cls$cmp_ne0002> created at line 84.
+    Found 32-bit comparator not equal for signal <cls$cmp_ne0003> created at line 84.
+    Found 32-bit comparator not equal for signal <cls$cmp_ne0004> created at line 84.
+    Found 4-bit comparator less for signal <strdata_110$cmp_lt0000> created at line 105.
+    Found 6-bit adder for signal <strdata_111_104$add0000> created at line 105.
+    Found 6-bit adder carry out for signal <strdata_111_104$addsub0000> created at line 105.
+    Found 4-bit comparator less for signal <strdata_126$cmp_lt0000> created at line 104.
+    Found 6-bit adder for signal <strdata_127_120$add0000> created at line 104.
+    Found 6-bit adder carry out for signal <strdata_127_120$addsub0000> created at line 104.
+    Found 4-bit comparator less for signal <strdata_14$cmp_lt0000> created at line 118.
+    Found 4-bit comparator less for signal <strdata_150$cmp_lt0000> created at line 101.
+    Found 6-bit adder for signal <strdata_151_144$add0000> created at line 101.
+    Found 6-bit adder carry out for signal <strdata_151_144$addsub0000> created at line 101.
+    Found 4-bit comparator less for signal <strdata_158$cmp_lt0000> created at line 100.
+    Found 6-bit adder for signal <strdata_159_152$add0000> created at line 100.
+    Found 6-bit adder carry out for signal <strdata_159_152$addsub0000> created at line 100.
+    Found 6-bit adder for signal <strdata_15_8$add0000> created at line 118.
+    Found 6-bit adder carry out for signal <strdata_15_8$addsub0000> created at line 118.
+    Found 4-bit comparator less for signal <strdata_174$cmp_lt0000> created at line 97.
+    Found 6-bit adder for signal <strdata_175_168$add0000> created at line 97.
+    Found 6-bit adder carry out for signal <strdata_175_168$addsub0000> created at line 97.
+    Found 4-bit comparator less for signal <strdata_182$cmp_lt0000> created at line 96.
+    Found 6-bit adder for signal <strdata_183_176$add0000> created at line 96.
+    Found 6-bit adder carry out for signal <strdata_183_176$addsub0000> created at line 96.
+    Found 4-bit comparator less for signal <strdata_198$cmp_lt0000> created at line 93.
+    Found 6-bit adder for signal <strdata_199_192$add0000> created at line 93.
+    Found 6-bit adder carry out for signal <strdata_199_192$addsub0000> created at line 93.
+    Found 4-bit comparator less for signal <strdata_206$cmp_lt0000> created at line 92.
+    Found 6-bit adder for signal <strdata_207_200$add0000> created at line 92.
+    Found 6-bit adder carry out for signal <strdata_207_200$addsub0000> created at line 92.
+    Found 4-bit comparator less for signal <strdata_214$cmp_lt0000> created at line 91.
+    Found 6-bit adder for signal <strdata_215_208$add0000> created at line 91.
+    Found 6-bit adder carry out for signal <strdata_215_208$addsub0000> created at line 91.
+    Found 4-bit comparator less for signal <strdata_22$cmp_lt0000> created at line 117.
+    Found 4-bit comparator less for signal <strdata_222$cmp_lt0000> created at line 90.
+    Found 6-bit adder for signal <strdata_223_216$add0000> created at line 90.
+    Found 6-bit adder carry out for signal <strdata_223_216$addsub0000> created at line 90.
+    Found 4-bit comparator less for signal <strdata_230$cmp_lt0000> created at line 89.
+    Found 6-bit adder for signal <strdata_231_224$add0000> created at line 89.
+    Found 6-bit adder carry out for signal <strdata_231_224$addsub0000> created at line 89.
+    Found 4-bit comparator less for signal <strdata_238$cmp_lt0000> created at line 88.
+    Found 6-bit adder for signal <strdata_239_232$add0000> created at line 88.
+    Found 6-bit adder carry out for signal <strdata_239_232$addsub0000> created at line 88.
+    Found 6-bit adder for signal <strdata_23_16$add0000> created at line 117.
+    Found 6-bit adder carry out for signal <strdata_23_16$addsub0000> created at line 117.
+    Found 4-bit comparator less for signal <strdata_246$cmp_lt0000> created at line 87.
+    Found 6-bit adder for signal <strdata_247_240$add0000> created at line 87.
+    Found 6-bit adder carry out for signal <strdata_247_240$addsub0000> created at line 87.
+    Found 4-bit comparator less for signal <strdata_254$cmp_lt0000> created at line 86.
+    Found 6-bit adder for signal <strdata_255_248$add0000> created at line 86.
+    Found 6-bit adder carry out for signal <strdata_255_248$addsub0000> created at line 86.
+    Found 4-bit comparator less for signal <strdata_30$cmp_lt0000> created at line 116.
+    Found 6-bit adder for signal <strdata_31_24$add0000> created at line 116.
+    Found 6-bit adder carry out for signal <strdata_31_24$addsub0000> created at line 116.
+    Found 4-bit comparator less for signal <strdata_6$cmp_lt0000> created at line 119.
+    Found 4-bit comparator less for signal <strdata_70$cmp_lt0000> created at line 110.
+    Found 6-bit adder for signal <strdata_71_64$add0000> created at line 110.
+    Found 6-bit adder carry out for signal <strdata_71_64$addsub0000> created at line 110.
+    Found 4-bit comparator less for signal <strdata_78$cmp_lt0000> created at line 109.
+    Found 6-bit adder for signal <strdata_79_72$add0000> created at line 109.
+    Found 6-bit adder carry out for signal <strdata_79_72$addsub0000> created at line 109.
+    Found 6-bit adder for signal <strdata_7_0$add0000> created at line 119.
+    Found 6-bit adder carry out for signal <strdata_7_0$addsub0000> created at line 119.
+    Found 4-bit comparator less for signal <strdata_94$cmp_lt0000> created at line 106.
+    Found 6-bit adder for signal <strdata_95_88$add0000> created at line 106.
+    Found 6-bit adder carry out for signal <strdata_95_88$addsub0000> created at line 106.
     Summary:
-	inferred  43 Adder/Subtractor(s).
-	inferred  25 Comparator(s).
+	inferred  42 Adder/Subtractor(s).
+	inferred  26 Comparator(s).
 Unit <top> synthesized.
 
 INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
@@ -771,12 +767,12 @@ HDL Synthesis Report
 Macro Statistics
 # ROMs                                                 : 1
  16x3-bit ROM                                          : 1
-# Adders/Subtractors                                   : 47
+# Adders/Subtractors                                   : 46
  19-bit adder                                          : 1
  32-bit adder                                          : 1
  32-bit addsub                                         : 1
  32-bit subtractor                                     : 1
- 6-bit adder                                           : 22
+ 6-bit adder                                           : 21
  6-bit adder carry out                                 : 21
 # Counters                                             : 1
  32-bit up counter                                     : 1
@@ -789,13 +785,13 @@ Macro Statistics
  4-bit register                                        : 1
  41-bit register                                       : 1
  8-bit register                                        : 1
-# Latches                                              : 162
- 1-bit latch                                           : 153
- 32-bit latch                                          : 9
-# Comparators                                          : 30
+# Latches                                              : 157
+ 1-bit latch                                           : 147
+ 32-bit latch                                          : 10
+# Comparators                                          : 31
  32-bit comparator greatequal                          : 2
  32-bit comparator less                                : 1
- 32-bit comparator not equal                           : 4
+ 32-bit comparator not equal                           : 5
  33-bit comparator greater                             : 1
  33-bit comparator less                                : 1
  4-bit comparator less                                 : 21
@@ -845,24 +841,24 @@ Macro Statistics
 # FSMs                                                 : 1
 # ROMs                                                 : 1
  16x3-bit ROM                                          : 1
-# Adders/Subtractors                                   : 47
+# Adders/Subtractors                                   : 46
  19-bit adder                                          : 1
  32-bit adder                                          : 1
  32-bit addsub                                         : 1
  32-bit subtractor                                     : 1
- 6-bit adder                                           : 22
+ 6-bit adder                                           : 21
  6-bit adder carry out                                 : 21
 # Counters                                             : 1
  32-bit up counter                                     : 1
 # Registers                                            : 728
  Flip-Flops                                            : 728
-# Latches                                              : 162
- 1-bit latch                                           : 153
- 32-bit latch                                          : 9
-# Comparators                                          : 30
+# Latches                                              : 157
+ 1-bit latch                                           : 147
+ 32-bit latch                                          : 10
+# Comparators                                          : 31
  32-bit comparator greatequal                          : 2
  32-bit comparator less                                : 1
- 32-bit comparator not equal                           : 4
+ 32-bit comparator not equal                           : 5
  33-bit comparator greater                             : 1
  33-bit comparator less                                : 1
  4-bit comparator less                                 : 21
@@ -875,11 +871,6 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1426 - The value init of the FF/Latch strdata_52 hinder the constant cleaning in the block top.
-   You should achieve better results by setting this init to 1.
-WARNING:Xst:1293 - FF/Latch <strdata_50> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <strdata_51> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <strdata_53> has a constant value of 1 in block <top>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <strdata_124> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <strdata_125> 
 INFO:Xst:2261 - The FF/Latch <strdata_228> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <strdata_229> 
 INFO:Xst:2261 - The FF/Latch <strdata_180> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <strdata_181> 
@@ -937,7 +928,7 @@ WARNING:Xst:2677 - Node <x_ctrl/insn_stage_0> of sequential type is unconnected 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 25.
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 26.
 FlipFlop M1/pbreg has been replicated 1 time(s)
 
 Final Macro Processing ...
@@ -976,24 +967,24 @@ Design Statistics
 # IOs                              : 23
 
 Cell Usage :
-# BELS                             : 2599
+# BELS                             : 2633
 #      GND                         : 2
 #      INV                         : 43
 #      LUT1                        : 82
-#      LUT2                        : 133
-#      LUT2_D                      : 5
-#      LUT2_L                      : 5
-#      LUT3                        : 348
-#      LUT3_D                      : 7
-#      LUT3_L                      : 9
-#      LUT4                        : 1365
-#      LUT4_D                      : 55
-#      LUT4_L                      : 53
-#      MUXCY                       : 268
-#      MUXF5                       : 81
+#      LUT2                        : 107
+#      LUT2_D                      : 4
+#      LUT2_L                      : 6
+#      LUT3                        : 364
+#      LUT3_D                      : 4
+#      LUT3_L                      : 7
+#      LUT4                        : 1407
+#      LUT4_D                      : 45
+#      LUT4_L                      : 44
+#      MUXCY                       : 292
+#      MUXF5                       : 83
 #      VCC                         : 2
 #      XORCY                       : 141
-# FlipFlops/Latches                : 1178
+# FlipFlops/Latches                : 1207
 #      FD                          : 66
 #      FDC                         : 4
 #      FDCE                        : 480
@@ -1003,7 +994,7 @@ Cell Usage :
 #      FDRS                        : 3
 #      FDRSE                       : 3
 #      FDS                         : 10
-#      LD                          : 414
+#      LD                          : 443
 # RAMS                             : 1
 #      RAMB16_S36_S36              : 1
 # Clock Buffers                    : 7
@@ -1019,9 +1010,9 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-4 
 
- Number of Slices:                     1245  out of   4656    26%  
- Number of Slice Flip Flops:           1178  out of   9312    12%  
- Number of 4 input LUTs:               2105  out of   9312    22%  
+ Number of Slices:                     1249  out of   4656    26%  
+ Number of Slice Flip Flops:           1207  out of   9312    12%  
+ Number of 4 input LUTs:               2113  out of   9312    22%  
  Number of IOs:                          23
  Number of bonded IOBs:                  18  out of    232     7%  
  Number of BRAMs:                         1  out of     20     5%  
@@ -1049,7 +1040,7 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 M2/pbreg1                          | BUFG                   | 598   |
-cls1(strdata_254_or0000:O)         | BUFG(*)(strdata_0)     | 254   |
+cls1(strdata_254_or0000:O)         | BUFG(*)(strdata_0)     | 283   |
 CCLK                               | BUFGP                  | 158   |
 x_ctrl/write_c1                    | BUFG                   | 32    |
 x_ctrl/write_a1                    | BUFG                   | 64    |
@@ -1075,7 +1066,7 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 20.672ns (Maximum Frequency: 48.375MHz)
+   Minimum period: 20.494ns (Maximum Frequency: 48.795MHz)
    Minimum input arrival time before clock: 3.117ns
    Maximum output required time after clock: 4.394ns
    Maximum combinational path delay: No path found
@@ -1086,10 +1077,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'M2/pbreg1'
-  Clock period: 13.605ns (frequency: 73.505MHz)
-  Total number of paths / destination ports: 15398 / 1183
+  Clock period: 13.891ns (frequency: 71.991MHz)
+  Total number of paths / destination ports: 20091 / 1183
 -------------------------------------------------------------------------
-Delay:               13.605ns (Levels of Logic = 28)
+Delay:               13.891ns (Levels of Logic = 40)
   Source:            x_ctrl/alu_srcA (FF)
   Destination:       x_ctrl/write_pc (FF)
   Source Clock:      M2/pbreg1 rising
@@ -1099,7 +1090,7 @@ Delay:               13.605ns (Levels of Logic = 28)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q             90   0.591   1.456  x_ctrl/alu_srcA (x_ctrl/alu_srcA)
+     FDE:C->Q             87   0.591   1.455  x_ctrl/alu_srcA (x_ctrl/alu_srcA)
      LUT3:I0->O            3   0.704   0.706  x_alu_wrapper/in_A<0>1 (x_alu_wrapper/in_A<0>)
      LUT4:I0->O            1   0.704   0.000  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_lut<0> (x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_lut<0>)
      MUXCY:S->O            1   0.464   0.000  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<0> (x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<0>)
@@ -1121,24 +1112,36 @@ Delay:               13.605ns (Levels of Logic = 28)
      MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<16> (x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<16>)
      MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<17> (x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<17>)
      MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<18> (x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<18>)
-     XORCY:CI->O           1   0.804   0.499  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_xor<19> (x_alu_wrapper/x_alu/display_num_addsub0000<19>)
-     LUT4:I1->O            3   0.704   0.535  x_alu_wrapper/x_alu/Mmux_display_num12 (alu_out<19>)
-     LUT4:I3->O            1   0.704   0.595  x_ctrl/write_pc_mux0000246 (x_ctrl/write_pc_mux0000246)
-     LUT4_L:I0->LO         1   0.704   0.275  x_ctrl/write_pc_mux0000260 (x_ctrl/write_pc_mux0000260)
-     LUT3:I0->O            1   0.704   0.499  x_ctrl/write_pc_mux0000310 (x_ctrl/write_pc_mux0000310)
-     LUT4_L:I1->LO         1   0.704   0.179  x_ctrl/write_pc_mux0000364 (x_ctrl/write_pc_mux0000364)
-     LUT3:I1->O            1   0.704   0.000  x_ctrl/write_pc_mux0000394 (x_ctrl/write_pc_mux0000)
+     MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<19> (x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<19>)
+     MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<20> (x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<20>)
+     MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<21> (x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<21>)
+     MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<22> (x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<22>)
+     MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<23> (x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_cy<23>)
+     XORCY:CI->O           1   0.804   0.595  x_alu_wrapper/x_alu/Maddsub_display_num_addsub0000_xor<24> (x_alu_wrapper/x_alu/display_num_addsub0000<24>)
+     LUT4:I0->O            5   0.704   0.808  x_alu_wrapper/x_alu/Mmux_display_num18 (alu_out<24>)
+     LUT4:I0->O            1   0.704   0.000  x_alu_wrapper/zero_cmp_eq0000_wg_lut<0> (x_alu_wrapper/zero_cmp_eq0000_wg_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  x_alu_wrapper/zero_cmp_eq0000_wg_cy<0> (x_alu_wrapper/zero_cmp_eq0000_wg_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/zero_cmp_eq0000_wg_cy<1> (x_alu_wrapper/zero_cmp_eq0000_wg_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/zero_cmp_eq0000_wg_cy<2> (x_alu_wrapper/zero_cmp_eq0000_wg_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/zero_cmp_eq0000_wg_cy<3> (x_alu_wrapper/zero_cmp_eq0000_wg_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/zero_cmp_eq0000_wg_cy<4> (x_alu_wrapper/zero_cmp_eq0000_wg_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/zero_cmp_eq0000_wg_cy<5> (x_alu_wrapper/zero_cmp_eq0000_wg_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  x_alu_wrapper/zero_cmp_eq0000_wg_cy<6> (x_alu_wrapper/zero_cmp_eq0000_wg_cy<6>)
+     MUXCY:CI->O           2   0.459   0.482  x_alu_wrapper/zero_cmp_eq0000_wg_cy<7> (x_alu_wrapper/zero_cmp_eq0000_wg_cy<7>)
+     LUT4:I2->O            1   0.704   0.000  x_ctrl/write_pc_mux000067_G (N1009)
+     MUXF5:I1->O           1   0.321   0.499  x_ctrl/write_pc_mux000067 (x_ctrl/write_pc_mux000067)
+     LUT4:I1->O            1   0.704   0.000  x_ctrl/write_pc_mux0000137 (x_ctrl/write_pc_mux0000)
      FDE:D                     0.308          x_ctrl/write_pc
     ----------------------------------------
-    Total                     13.605ns (8.861ns logic, 4.744ns route)
-                                       (65.1% logic, 34.9% route)
+    Total                     13.891ns (9.346ns logic, 4.545ns route)
+                                       (67.3% logic, 32.7% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CCLK'
-  Clock period: 20.672ns (frequency: 48.375MHz)
-  Total number of paths / destination ports: 9281877 / 212
+  Clock period: 20.494ns (frequency: 48.795MHz)
+  Total number of paths / destination ports: 9098254 / 212
 -------------------------------------------------------------------------
-Delay:               20.672ns (Levels of Logic = 28)
+Delay:               20.494ns (Levels of Logic = 21)
   Source:            M0/M0/lcdcount_1 (FF)
   Destination:       M0/M0/lcdstate_6 (FF)
   Source Clock:      CCLK rising
@@ -1158,29 +1161,22 @@ Delay:               20.672ns (Levels of Logic = 28)
      MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_8_addsub0000_cy<6> (M0/M0/Madd_old_lcdcount_8_addsub0000_cy<6>)
      MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_8_addsub0000_cy<7> (M0/M0/Madd_old_lcdcount_8_addsub0000_cy<7>)
      MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_8_addsub0000_cy<8> (M0/M0/Madd_old_lcdcount_8_addsub0000_cy<8>)
-     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_8_addsub0000_cy<9> (M0/M0/Madd_old_lcdcount_8_addsub0000_cy<9>)
-     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_8_addsub0000_cy<10> (M0/M0/Madd_old_lcdcount_8_addsub0000_cy<10>)
-     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_8_addsub0000_cy<11> (M0/M0/Madd_old_lcdcount_8_addsub0000_cy<11>)
-     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_8_addsub0000_cy<12> (M0/M0/Madd_old_lcdcount_8_addsub0000_cy<12>)
-     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_8_addsub0000_cy<13> (M0/M0/Madd_old_lcdcount_8_addsub0000_cy<13>)
-     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_8_addsub0000_cy<14> (M0/M0/Madd_old_lcdcount_8_addsub0000_cy<14>)
-     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_8_addsub0000_cy<15> (M0/M0/Madd_old_lcdcount_8_addsub0000_cy<15>)
-     MUXCY:CI->O           1   0.059   0.000  M0/M0/Madd_old_lcdcount_8_addsub0000_cy<16> (M0/M0/Madd_old_lcdcount_8_addsub0000_cy<16>)
-     XORCY:CI->O          13   0.804   0.987  M0/M0/Madd_old_lcdcount_8_addsub0000_xor<17> (M0/M0/old_lcdcount_8_addsub0000<17>)
-     LUT4:I3->O           11   0.704   0.968  M0/M0/old_lcdstate_10_cmp_eq0000140 (M0/M0/old_lcdstate_10_cmp_eq0000140)
-     LUT4:I2->O            6   0.704   0.673  M0/M0/old_lcdstate_10_cmp_eq000221 (M0/M0/N741)
-     LUT4:I3->O           27   0.704   1.296  M0/M0/lcdstate_cmp_eq0000164 (M0/M0/N104)
-     LUT4:I2->O            2   0.704   0.622  M0/M0/old_lcdstate_14_cmp_eq000011_SW0_SW0 (N736)
-     LUT4:I0->O            9   0.704   0.824  M0/M0/lcdstate_mux0000<32>3 (M0/M0/N54)
-     LUT4:I3->O            7   0.704   0.743  M0/M0/_old_lcdstate_18<6>1 (M0/M0/_old_lcdstate_18<6>)
-     LUT4:I2->O            4   0.704   0.622  M0/M0/_old_lcdcount_23<5>11 (M0/M0/N751)
-     LUT4:I2->O           10   0.704   0.886  M0/M0/_old_lcdcount_23<6> (M0/M0/_old_lcdcount_23<6>)
-     LUT4_D:I3->O          5   0.704   0.637  M0/M0/lcdstate_mux0000<38>20_SW0 (N488)
+     XORCY:CI->O           4   0.804   0.591  M0/M0/Madd_old_lcdcount_8_addsub0000_xor<9> (M0/M0/old_lcdcount_8_addsub0000<9>)
+     LUT4_D:I3->O          5   0.704   0.668  M0/M0/old_lcdstate_10_cmp_eq0000115 (M0/M0/old_lcdstate_10_cmp_eq0000115)
+     LUT4:I2->O            1   0.704   0.455  M0/M0/old_lcdstate_10_cmp_eq000021_SW3 (N682)
+     LUT4:I2->O           20   0.704   1.106  M0/M0/lcdstate_mux0000<11>11 (M0/M0/N33)
+     LUT4:I3->O            6   0.704   0.748  M0/M0/_old_lcdstate_10<6> (M0/M0/_old_lcdstate_10<6>)
+     LUT4:I1->O            1   0.704   0.424  M0/M0/_old_lcdcount_19<4>111_SW0 (N692)
+     LUT4_D:I3->O          1   0.704   0.455  M0/M0/_old_lcdcount_15<11>_SW0_SW0 (N519)
+     LUT4:I2->O           17   0.704   1.130  M0/M0/_old_lcdcount_15<11> (M0/M0/_old_lcdcount_15<11>)
+     LUT4:I1->O            6   0.704   0.748  M0/M0/old_lcdstate_22_cmp_eq000211 (M0/M0/N681)
+     LUT4:I1->O           10   0.704   0.886  M0/M0/_old_lcdcount_23<6> (M0/M0/_old_lcdcount_23<6>)
+     LUT4_D:I3->O          5   0.704   0.637  M0/M0/lcdstate_mux0000<38>20_SW0 (N497)
      LUT4:I3->O            1   0.704   0.420  M0/M0/lcdstate_mux0000<34>20 (M0/M0/lcdstate_mux0000<34>20)
      FDS:S                     0.911          M0/M0/lcdstate_6
     ----------------------------------------
-    Total                     20.672ns (11.399ns logic, 9.273ns route)
-                                       (55.1% logic, 44.9% route)
+    Total                     20.494ns (11.631ns logic, 8.863ns route)
+                                       (56.8% logic, 43.2% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'C1/clk'
@@ -1198,7 +1194,7 @@ Delay:               3.433ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FD:C->Q             260   0.591   1.509  M1/pbreg (M1/pbreg)
-     LUT4:I0->O            1   0.704   0.000  M1/pbreg_mux0000_F (N982)
+     LUT4:I0->O            1   0.704   0.000  M1/pbreg_mux0000_F (N998)
      MUXF5:I0->O           2   0.321   0.000  M1/pbreg_mux0000 (M1/pbreg_mux0000)
      FD:D                      0.308          M1/pbreg
     ----------------------------------------
@@ -1219,7 +1215,7 @@ Offset:              3.117ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             3   1.218   0.566  BTN3_IN_IBUF (BTN3_IN_IBUF)
-     LUT4:I2->O            1   0.704   0.000  M2/pbreg_mux0000_F (N980)
+     LUT4:I2->O            1   0.704   0.000  M2/pbreg_mux0000_F (N996)
      MUXF5:I0->O           1   0.321   0.000  M2/pbreg_mux0000 (M2/pbreg_mux0000)
      FD:D                      0.308          M2/pbreg
     ----------------------------------------
@@ -1267,14 +1263,14 @@ Offset:              4.394ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 47.00 secs
-Total CPU time to Xst completion: 46.27 secs
+Total REAL time to Xst completion: 52.00 secs
+Total CPU time to Xst completion: 52.45 secs
  
 --> 
 
-Total memory usage is 370524 kilobytes
+Total memory usage is 369500 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  221 (   0 filtered)
-Number of infos    :   47 (   0 filtered)
+Number of warnings :  211 (   0 filtered)
+Number of infos    :   45 (   0 filtered)
 
