@@ -62,6 +62,7 @@ output wire [7:0]LED, output wire LCDE, LCDRS, LCDRW, output wire [3:0]LCDDAT);
     reg [31:0]     waddr_old;
     reg [31:0]     alu_out_old;
     reg [15:0]     rcontent_old;
+    reg            choose_old;
 
     wire [3:0]     lcdd;
     wire rslcd, rwlcd, elcd;
@@ -82,7 +83,7 @@ output wire [7:0]LED, output wire LCDE, LCDRS, LCDRW, output wire [3:0]LCDDAT);
     display M0 (CCLK, cls, strdata, rslcd, rwlcd, elcd, lcdd);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 
     always @(CCLK) begin
-        if ((BTN3 == 1'b1) || (mem_data != mem_data_old) || (pc != pc_old) || (raddr != raddr_old) || (waddr != waddr_old) || (alu_out != alu_out_old || rcontent != rcontent_old)) begin
+        if ((BTN3 == 1'b1) || (mem_data != mem_data_old) || (pc != pc_old) || (raddr != raddr_old) || (waddr != waddr_old) || (alu_out != alu_out_old || rcontent != rcontent_old || choose != choose_old)) begin
             //first line: instruction data
             strdata[255:248] = (mem_data[31:28]<10)?(8'h30 + mem_data[31:28]):(8'h37 + mem_data[31:28]);
             strdata[247:240] = (mem_data[27:24]<10)?(8'h30 + mem_data[27:24]):(8'h37 + mem_data[27:24]);

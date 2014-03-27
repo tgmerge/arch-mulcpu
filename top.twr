@@ -36,9 +36,9 @@ INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and
 Timing constraint: NET "CCLK_BUFGP/IBUFG" PERIOD = 20 ns HIGH 40%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 9098254 paths analyzed, 649 endpoints analyzed, 0 failing endpoints
+ 9125506 paths analyzed, 649 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is  19.929ns.
+ Minimum period is  19.830ns.
 --------------------------------------------------------------------------------
 
 
@@ -54,7 +54,7 @@ Clock to Setup on destination clock CCLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CCLK           |   19.929|         |         |         |
+CCLK           |   19.830|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -63,13 +63,13 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 9098254 paths, 0 nets, and 2559 connections
+Constraints cover 9125506 paths, 0 nets, and 2554 connections
 
 Design statistics:
-   Minimum period:  19.929ns   (Maximum frequency:  50.178MHz)
+   Minimum period:  19.830ns   (Maximum frequency:  50.429MHz)
 
 
-Analysis completed Tue Mar 25 16:47:23 2014 
+Analysis completed Tue Mar 25 17:13:41 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
