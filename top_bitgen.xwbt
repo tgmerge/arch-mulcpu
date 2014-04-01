@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=Z:top.ncd
-OUTFILE=Z:top.bit
-FAMILY=Spartan3E
-PART=xc3s500e-4fg320
-WORKINGDIR=Z:
-LICENSE=WebPack
-USER_INFO=__0_0_0
