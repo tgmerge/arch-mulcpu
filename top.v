@@ -118,6 +118,7 @@
 
 	always @(posedge BTN1) reg_select = ~reg_select;
 	always @(posedge CCLK) begin
+		// # 12-15 of first line: register content
 		if(reg_select == 1'b0) begin
 			strdata[159:152] <= (reg_content[15:12]<10)?(8'h30+reg_content[15:12]):(8'h37+reg_content[15:12]);//8'h30 + reg_content[15:12];
 			strdata[151:144] <= (reg_content[11:8]<10)?(8'h30+reg_content[11:8]):(8'h37+reg_content[11:8]);//8'h30 + reg_content[11:8];
@@ -137,26 +138,36 @@
 			//strdata[255:248] <= (if_inst[31:28]<10)?(8'h30 + if_inst[31:28]):(8'h37 + if_inst[31:28]);
 			//strdata[247:240] <= (if_inst[27:24]<10)?(8'h30 + if_inst[27:24]):(8'h37 + if_inst[27:24]);
 			//strdata[239:232] <= (if_inst[23:20]<10)?(8'h30 + if_inst[23:20]):(8'h37 + if_inst[23:20]);
-			strdata[255:248] <= 8'h30+ wb_destR[3:0];
-			
-			strdata[247:240] <= 8'h30+ wb_dest[3:0];
-			
-			strdata[239:232] <= 8'h30+ {3'b000,wb_wreg};
-			strdata[231:224] <= (if_inst[19:16]<10)?(8'h30 + if_inst[19:16]):(8'h37 + if_inst[19:16]);
-			strdata[223:216] <= (if_inst[15:12]<10)?(8'h30 + if_inst[15:12]):(8'h37 + if_inst[15:12]);	
-			strdata[215:208] <= (if_inst[11:8]<10)?(8'h30 + if_inst[11:8]):(8'h37 + if_inst[11:8]);
-			strdata[207:200] <= (if_inst[7:4]<10)?(8'h30 + if_inst[7:4]):(8'h37 + if_inst[7:4]);
-			strdata[199:192] <= (if_inst[3:0]<10)?(8'h30 + if_inst[3:0]):(8'h37 + if_inst[3:0]);
+			//strdata[255:248] <= 8'h30+ wb_destR[3:0];
+			//strdata[247:240] <= 8'h30+ wb_dest[3:0];
+			//strdata[239:232] <= 8'h30+ {3'b000,wb_wreg};
+			//strdata[231:224] <= (if_inst[19:16]<10)?(8'h30 + if_inst[19:16]):(8'h37 + if_inst[19:16]);
+			//strdata[223:216] <= (if_inst[15:12]<10)?(8'h30 + if_inst[15:12]):(8'h37 + if_inst[15:12]);	
+			//strdata[215:208] <= (if_inst[11:8]<10)?(8'h30 + if_inst[11:8]):(8'h37 + if_inst[11:8]);
+			//strdata[207:200] <= (if_inst[7:4]<10)?(8'h30 + if_inst[7:4]):(8'h37 + if_inst[7:4]);
+			//strdata[199:192] <= (if_inst[3:0]<10)?(8'h30 + if_inst[3:0]):(8'h37 + if_inst[3:0]);
 
-			//space
+			// # 0-7 char of first line: instruction code
+			strdata[255:248] <= (if_inst[31:28]<10) ? (8'h30 + if_inst[31:28]) : (8'h37 + if_inst[31:28]);
+			strdata[247:240] <= (if_inst[27:24]<10) ? (8'h30 + if_inst[27:24]) : (8'h37 + if_inst[27:24]);
+			strdata[239:232] <= (if_inst[23:20]<10) ? (8'h30 + if_inst[23:20]) : (8'h37 + if_inst[23:20]);
+			strdata[231:224] <= (if_inst[19:16]<10) ? (8'h30 + if_inst[19:16]) : (8'h37 + if_inst[19:16]);
+			strdata[223:216] <= (if_inst[15:12]<10) ? (8'h30 + if_inst[15:12]) : (8'h37 + if_inst[15:12]);
+			strdata[215:208] <= (if_inst[11:8]<10) ? (8'h30 + if_inst[11:8]) : (8'h37 + if_inst[11:8]);
+			strdata[207:200] <= (if_inst[7:4]<10) ? (8'h30 + if_inst[7:4]) : (8'h37 + if_inst[7:4]);
+			strdata[199:192] <= (if_inst[3:0]<10) ? (8'h30 + if_inst[3:0]) : (8'h37 + if_inst[3:0]);
+
+			// # 8 of first line: space
 			//strdata[191:184] = " ";
-			//2 4-bit CLK
+
+			// # 9-10 of first line: clock count
 			strdata[183:176] <= (clk_cnt[7:4]<10)?(8'h30+clk_cnt[7:4]):(8'h37+clk_cnt[7:4]);//8'h30 + clk_cnt[7:4];
 			strdata[175:168] <= (clk_cnt[3:0]<10)?(8'h30+clk_cnt[3:0]):(8'h37+clk_cnt[3:0]);//8'h30 + clk_cnt[3:0];
-			//space
+
+			// # 11 of first line: space
 			//strdata[167:160] = " ";
 
-			//second line
+			// # second line
 			//strdata[127:120] = "f";
 			strdata[119:112] <= (IF_ins_number<10)?(8'h30+IF_ins_number):(8'h37+IF_ins_number);//8'h30 + IF_ins_number;
 			strdata[111:104] <= (IF_ins_type<10)?(8'h30+IF_ins_type):(8'h37+IF_ins_type);//8'h30 + IF_ins_type;
