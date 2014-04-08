@@ -18,24 +18,25 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module alu(
-	input wire [31:0] a, 
-    input wire [31:0] b, 
-    input wire [1:0] switch, 
-    output reg [31:0] display_num
-);
-
+`include "macro.vh"
+module alu(input wire [31:0] a,
+input wire [31:0] b,
+input wire [3:0] switch,
+output reg [31:0] display_num);
 initial begin
-    display_num=0;
+display_num=0;
 end
-
 always @ (switch)
 begin
-	case(switch[1:0])
-		2'b00:display_num=a + b;
-		2'b01:display_num=a - b;
-		2'b10:display_num=(a<b) ? 1'b1 : 1'b0;
-		2'b11:display_num=a & b;
+	case(switch[3:0])
+		`ALU_ADD:display_num=a + b;
+		`ALU_SUB:display_num=a - b;
+		`ALU_OR:display_num=a|b;
+		`ALU_AND:display_num=a&b;
+		`ALU_NOR:display_num=~(a|b);
+		`ALU_SLT:display_num= (a<b)? 1:0;
+		//`ALU_SLL:display_num=
+	//	default:display=a+b;
 	endcase
 	end
 endmodule

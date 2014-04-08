@@ -1,6 +1,23 @@
-// Basys Board and Spartan-3E Starter Board
-// Crystal Clock Oscillator  clkosc.v
-
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    13:41:38 03/24/2014 
+// Design Name: 
+// Module Name:    clock 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
 module clock(input CCLK, input [31:0] clkscale, output reg clk);
 									// CCLK crystal clock oscillator 50 MHz
 reg [31:0] clkq = 0;			// clock register, initial value of 0

@@ -1,0 +1,14 @@
+# Output products list for <dmem>
+blk_mem_gen_ds512.pdf
+dmem.asy
+dmem.gise
+dmem.mif
+dmem.ngc
+dmem.sym
+dmem.v
+dmem.veo
+dmem.xco
+dmem.xise
+dmem_flist.txt
+dmem_readme.txt
+dmem_xmdf.tcl

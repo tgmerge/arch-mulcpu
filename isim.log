@@ -1,18 +1,10 @@
-Command line:
-   ./test_isim_beh.exe
-     -intstyle  ise
-     -ipchost  localhost
-     -ipcport  1586
-
-Sun Mar 09 18:58:11 2014
-
-WARNING:Simulator:694 - "D:/mmmmmmmmmmmmcpu/test.tfw" Line 61.  Module ctrl does
-   not have a `timescale directive but previous modules do.
-Total Line Count : 233
-ERROR: Signal Unknown signal received
-
-
-ERROR: Signal Unknown signal received
-
-f
-f  
+ISim log file
+Running: C:\Users\cszju\Desktop\pipeLineCPU\test_CU_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/cszju/Desktop/pipeLineCPU/test_CU_isim_beh.wdb 
+ISim O.87xd (signature 0xc3576ebc)
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.

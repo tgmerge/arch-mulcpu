@@ -1,3 +1,0 @@
-MODULE test_ctrl
-SUBMODULE ctrl
-INSTANCE UUT

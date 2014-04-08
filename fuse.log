@@ -1,22 +1,18 @@
+Running: C:\Xilinx\13.4\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/cszju/Desktop/pipeLineCPU/test_CU_isim_beh.exe -prj C:/Users/cszju/Desktop/pipeLineCPU/test_CU_beh.prj work.test_CU work.glbl 
+ISim O.87xd (signature 0xc3576ebc)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Analyzing Verilog file alu.v
-Analyzing Verilog file test_alu.tfw
-Analyzing Verilog file /Xilinx/ISE/verilog/src/glbl.v
-Saving Verilog parse-tree work.alu into
-/media/5AF46725F467029D/mmmmmmmmmmmmcpu/isim/work/alu.sdb
-Saving Verilog parse-tree work.test_alu into
-/media/5AF46725F467029D/mmmmmmmmmmmmcpu/isim/work/test_alu.sdb
-Saving Verilog parse-tree work.glbl into
-/media/5AF46725F467029D/mmmmmmmmmmmmcpu/isim/work/glbl.sdb
+Analyzing Verilog file "C:/Users/cszju/Desktop/pipeLineCPU/control_unit.v" into library work
+Analyzing Verilog file "C:/Users/cszju/Desktop/pipeLineCPU/cu_test.v" into library work
+Analyzing Verilog file "C:/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 22484 Kb
-Fuse CPU Usage: 110 ms
+Compiling module ctrl_unit
+Compiling module test_CU
 Compiling module glbl
-Compiling module alu
-Compiling module test_alu
+Time Resolution for simulation is 1ps.
 Compiled 3 Verilog Units
-Built simulation executable test_alu_isim_beh.exe
-Fuse Memory Usage: 23512 Kb
-Fuse CPU Usage: 120 ms
-GCC CPU Usage: 140 ms
+Built simulation executable C:/Users/cszju/Desktop/pipeLineCPU/test_CU_isim_beh.exe
+Fuse Memory Usage: 28236 KB
+Fuse CPU Usage: 296 ms

@@ -1,184 +1,217 @@
-module top(input wire CCLK, BTN3_IN, BTN2_IN,BTN1_IN,input wire[3:0] SW,
-output wire [7:0]LED, output wire LCDE, LCDRS, LCDRW, output wire [3:0]LCDDAT);
-  
-    wire          clk_1ms;
-    wire          clk;
-    wire          rst; 
-    wire          choose;
-    wire [31:0]   raddr;   
-    wire [31:0]   waddr;
-    wire [31:0]   mem_data;
-    
-    wire          zero;
-    wire          write_pc;
-    wire          iord;
-    wire          write_mem;
-    wire          write_dr;
-    wire          write_ir;
-    wire          memtoreg;
-    wire          regdst;
-    wire [1:0]    pcsource;
-    wire          write_c;
-    wire [1:0]    alu_ctrl;
-    wire          alu_srcA;
-    wire [1:0]    alu_srcB;
-    wire          write_a;
-    wire          write_b;
-    wire          write_reg;
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    19:45:04 03/18/2014 
+// Design Name: 
+// Module Name:    top 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+ module top(input wire CCLK, BTN3_IN, BTN2_IN, BTN1_IN, input wire [3:0]SW, output wire [1:0] LED, output wire LCDE, LCDRS, LCDRW, output wire [3:0]LCDDAT);
+// BTN3  is system clk, BTN2 is the
+	wire [31:0] if_npc;
+	wire [31:0] if_pc4;
+	wire [31:0] if_inst;
+	
+	wire [31:0] id_pc4;	
+	wire [31:0] id_inA;
+	wire [31:0] id_inB;
+	wire [31:0] id_imm;
+	wire [4:0] id_destR;
+	wire [4:0] id_regrt;
+	wire [4:0] id_rt;
+	wire [4:0] id_rd;
+	wire id_branch; 
+	wire id_wreg;
+	wire id_m2reg;
+	wire id_wmem;
+	wire [3:0] id_aluc;
+	wire id_shift;
+	wire id_aluimm;
+	
+	wire ex_wreg;
+	wire ex_m2reg;
+	wire ex_wmem;
+	wire[31:0] ex_aluR;
+	wire[31:0] ex_inB;
+	wire[4:0] ex_destR;
+	wire ex_branch,ex_zero;
+	wire[31:0]ex_pc;
+	
+	wire mem_wreg;
+	wire mem_m2reg;
+	wire[31:0] mem_mdata;
+	wire[31:0] mem_aluR;
+	wire[4:0] mem_destR;
+	wire mem_branch;
+	wire[31:0] mem_pc;
+	
+	wire wb_wreg;
+	wire[4:0] wb_destR;
+	wire[31:0] wb_dest;
+	
+	wire [3:0] IF_ins_type; 
+	wire [3:0] IF_ins_number;
+	wire [3:0] ID_ins_type;
+	wire [3:0] ID_ins_number;
+	wire [3:0] EX_ins_type; 
+	wire [3:0] EX_ins_number;
+	wire [3:0] MEM_ins_type; 
+	wire [3:0] MEM_ins_number;
+	wire [3:0] WB_ins_type; 
+	wire [3:0] WB_ins_number;
+	wire [3:0] OUT_ins_type; 
+	wire [3:0] OUT_ins_number;
+	
+	wire [31:0] pc;
+	wire [31:0] reg_content;
+	wire [3:0] which_reg;
+	
+	reg [255:0] strdata;
+	reg [3:0] SW_old;
+	reg [7:0] clk_cnt;
+	reg cls;
 
-    wire [31:0]   alu_out;
-    wire [31:0]   rdata_A;
-    wire [31:0]   rdata_B;
-    wire [15:0]   rcontent;
-    wire [31:0]   pc;
-    wire [3:0]    state_out;
-    wire [3:0]    insn_type;
-    wire [3:0]    insn_code;
-    wire [2:0]    insn_stage;
-    wire [7:0]    r6out;
-    
-    reg  [31:0]   ir_data;
-    reg  [31:0]   dr_data;
-    reg  [31:0]   a_data;
-    reg  [31:0]   b_data;
-    reg  [31:0]   c_data;
-    
-    clock C1 (CCLK, 25000, clk0);
-    pbdebounce M1(clk0, BTN2_IN, BTN2);
-    pbdebounce M2(clk0, BTN3_IN, BTN3);
-    pbdebounce M3(clk0, BTN1_IN, BTN1);
-    assign raddr = iord? c_data[31:0] : pc;
-    assign waddr = c_data[31:0];
-    assign choose = BTN1;
-    assign clk = BTN3;
-    assign rst = BTN2;
-    assign LED[7:0] = r6out[7:0];
+	wire [3:0] lcdd;
+	wire rslcd, rwlcd, elcd;
+	wire clk_1ms;
+	wire BTN1, BTN2, BTN3;
+	
+	reg reg_select = 0;
 
-    reg [255:0]    strdata;
-    reg            cls;
-    reg [31:0]     mem_data_old;
-    reg [31:0]     pc_old;
-    reg [31:0]     raddr_old;
-    reg [31:0]     waddr_old;
-    reg [31:0]     alu_out_old;
-    reg [15:0]     rcontent_old;
-    reg            choose_old;
+	assign LCDDAT[3]=lcdd[3];
+	assign LCDDAT[2]=lcdd[2];
+	assign LCDDAT[1]=lcdd[1];
+	assign LCDDAT[0]=lcdd[0];
+	
+	assign LCDRS=rslcd;
+	assign LCDRW=rwlcd;
+	assign LCDE=elcd;
+	
+	assign LED[0]=BTN3;
+	assign LED[1]=mem_branch;
+	assign which_reg[3:0] = SW[3:0];
 
-    wire [3:0]     lcdd;
-    wire rslcd, rwlcd, elcd;
+	initial begin
+		strdata <= "01234567 00 0123f01d01e01m01w01 ";
+		SW_old = 4'b0;
+		clk_cnt <= 8'b0;
+		cls <= 1'b0;
+	end
+	clock C1 (CCLK, 25000, clk0);
+	pbdebounce M3(CCLK, BTN1_IN, BTN1);
+	pbdebounce M1(clk0, BTN2_IN, BTN2);
+	pbdebounce M2(clk0, BTN3_IN, BTN3);
+	
+	display M0 (CCLK, cls, strdata, rslcd, rwlcd, elcd, lcdd);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 
-    assign LCDDAT[3] = lcdd[3];
-    assign LCDDAT[2] = lcdd[2];
-    assign LCDDAT[1] = lcdd[1];
-    assign LCDDAT[0] = lcdd[0];
-    
-    assign LCDRS = rslcd;
-    assign LCDRW = rwlcd;
-    assign LCDE = elcd;
-    
-    initial begin
-        strdata = "01234567 01 01  0 1 2 01        ";
-    end
-    
-    display M0 (CCLK, cls, strdata, rslcd, rwlcd, elcd, lcdd);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+	always @(posedge BTN1) reg_select = ~reg_select;
+	always @(posedge CCLK) begin
+		if(reg_select == 1'b0) begin
+			strdata[159:152] <= (reg_content[15:12]<10)?(8'h30+reg_content[15:12]):(8'h37+reg_content[15:12]);//8'h30 + reg_content[15:12];
+			strdata[151:144] <= (reg_content[11:8]<10)?(8'h30+reg_content[11:8]):(8'h37+reg_content[11:8]);//8'h30 + reg_content[11:8];
+			strdata[143:136] <= (reg_content[7:4]<10)?(8'h30+reg_content[7:4]):(8'h37+reg_content[7:4]);//8'h30 + reg_content[7:4];
+			strdata[135:128] <= (reg_content[3:0]<10)?(8'h30+reg_content[3:0]):(8'h37+reg_content[3:0]);//8'h30 + reg_content[3:0];
+		end
+		else begin
+			strdata[159:152] <= (reg_content[31:28]<10)?(8'h30+reg_content[31:28]):(8'h37+reg_content[31:28]);//8'h30 + reg_content[15:12];
+			strdata[151:144] <= (reg_content[27:24]<10)?(8'h30+reg_content[27:24]):(8'h37+reg_content[27:24]);//8'h30 + reg_content[11:8];
+			strdata[143:136] <= (reg_content[23:20]<10)?(8'h30+reg_content[23:20]):(8'h37+reg_content[23:20]);//8'h30 + reg_content[7:4];
+			strdata[135:128] <= (reg_content[19:16]<10)?(8'h30+reg_content[19:16]):(8'h37+reg_content[19:16]);//8'h30 + reg_content[3:0];
+		end
+	end
+	always @(posedge CCLK) begin
+		if ((BTN3 == 1'b1) || (BTN2 == 1'b1)||(BTN1== 1'b1)||(SW_old != SW)) begin
+			//first line 8 4-bit Instrution
+			//strdata[255:248] <= (if_inst[31:28]<10)?(8'h30 + if_inst[31:28]):(8'h37 + if_inst[31:28]);
+			//strdata[247:240] <= (if_inst[27:24]<10)?(8'h30 + if_inst[27:24]):(8'h37 + if_inst[27:24]);
+			//strdata[239:232] <= (if_inst[23:20]<10)?(8'h30 + if_inst[23:20]):(8'h37 + if_inst[23:20]);
+			strdata[255:248] <= 8'h30+ wb_destR[3:0];
+			
+			strdata[247:240] <= 8'h30+ wb_dest[3:0];
+			
+			strdata[239:232] <= 8'h30+ {3'b000,wb_wreg};
+			strdata[231:224] <= (if_inst[19:16]<10)?(8'h30 + if_inst[19:16]):(8'h37 + if_inst[19:16]);
+			strdata[223:216] <= (if_inst[15:12]<10)?(8'h30 + if_inst[15:12]):(8'h37 + if_inst[15:12]);	
+			strdata[215:208] <= (if_inst[11:8]<10)?(8'h30 + if_inst[11:8]):(8'h37 + if_inst[11:8]);
+			strdata[207:200] <= (if_inst[7:4]<10)?(8'h30 + if_inst[7:4]):(8'h37 + if_inst[7:4]);
+			strdata[199:192] <= (if_inst[3:0]<10)?(8'h30 + if_inst[3:0]):(8'h37 + if_inst[3:0]);
 
-    always @(CCLK) begin
-        if ((BTN3 == 1'b1) || (mem_data != mem_data_old) || (pc != pc_old) || (raddr != raddr_old) || (waddr != waddr_old) || (alu_out != alu_out_old || rcontent != rcontent_old || choose != choose_old)) begin
-            //first line: instruction data
-            strdata[255:248] = (mem_data[31:28]<10)?(8'h30 + mem_data[31:28]):(8'h37 + mem_data[31:28]);
-            strdata[247:240] = (mem_data[27:24]<10)?(8'h30 + mem_data[27:24]):(8'h37 + mem_data[27:24]);
-            strdata[239:232] = (mem_data[23:20]<10)?(8'h30 + mem_data[23:20]):(8'h37 + mem_data[23:20]);
-            strdata[231:224] = (mem_data[19:16]<10)?(8'h30 + mem_data[19:16]):(8'h37 + mem_data[19:16]);
-            strdata[223:216] = (mem_data[15:12]<10)?(8'h30 + mem_data[15:12]):(8'h37 + mem_data[15:12]);
-            strdata[215:208] = (mem_data[11:8]<10)?(8'h30 + mem_data[11:8]):(8'h37 + mem_data[11:8]);
-            strdata[207:200] = (mem_data[7:4]<10)?(8'h30 + mem_data[7:4]):(8'h37 + mem_data[7:4]);
-            strdata[199:192] = (mem_data[3:0]<10)?(8'h30 + mem_data[3:0]):(8'h37 + mem_data[3:0]);
+			//space
+			//strdata[191:184] = " ";
+			//2 4-bit CLK
+			strdata[183:176] <= (clk_cnt[7:4]<10)?(8'h30+clk_cnt[7:4]):(8'h37+clk_cnt[7:4]);//8'h30 + clk_cnt[7:4];
+			strdata[175:168] <= (clk_cnt[3:0]<10)?(8'h30+clk_cnt[3:0]):(8'h37+clk_cnt[3:0]);//8'h30 + clk_cnt[3:0];
+			//space
+			//strdata[167:160] = " ";
 
-            //2 4-bit raddr
-            strdata[183:176] = (raddr[7:4]<10)?(8'h30 + raddr[7:4]):(8'h37 + raddr[7:4]);
-            strdata[175:168] = (raddr[3:0]<10)?(8'h30 + raddr[3:0]):(8'h37 + raddr[3:0]);
+			//second line
+			//strdata[127:120] = "f";
+			strdata[119:112] <= (IF_ins_number<10)?(8'h30+IF_ins_number):(8'h37+IF_ins_number);//8'h30 + IF_ins_number;
+			strdata[111:104] <= (IF_ins_type<10)?(8'h30+IF_ins_type):(8'h37+IF_ins_type);//8'h30 + IF_ins_type;
+			//strdata[103:96] = "d";
+			strdata[95:88] <= (ID_ins_number<10)?(8'h30+ID_ins_number):(8'h37+ID_ins_number);//8'h30 + ID_ins_number;
+			strdata[87:80] <= (ID_ins_type<10)?(8'h30+ID_ins_type):(8'h37+ID_ins_type);//8'h30 + ID_ins_type;
+			//strdata[79:72] = "e";
+			strdata[71:64] <= (EX_ins_number<10)?(8'h30+EX_ins_number):(8'h37+EX_ins_number);//8'h30 + EX_ins_number;
+			strdata[63:56] <= (EX_ins_type<10)?(8'h30+EX_ins_type):(8'h37+EX_ins_type);//8'h30 + EX_ins_type;
+			//strdata[55:48] = "m";
+			strdata[47:40] <= (MEM_ins_number<10)?(8'h30+MEM_ins_number):(8'h37+MEM_ins_number);//8'h30 + MEM_ins_number;
+			strdata[39:32] <= (MEM_ins_type<10)?(8'h30+MEM_ins_type):(8'h37+MEM_ins_type);//8'h30 + MEM_ins_type;
+			//strdata[31:24] = "w";
+			strdata[23:16] <= (WB_ins_number<10)?(8'h30+WB_ins_number):(8'h37+WB_ins_number);//8'h30 + WB_ins_number;
+			strdata[15:8] <=(WB_ins_type<10)?(8'h30+WB_ins_type):(8'h37+WB_ins_type);//8'h30 + WB_ins_type;
+			strdata[7:0] <= 8'h30+{3'b000,wb_wreg};//8'h30 + WB_ins_type;		
+			//end
+		   //if((BTN3 == 1'b1) || (BTN2 == 1'b1)||(SW_old != SW)) begin
+			//first line after CLK and space
+			//strdata[159:152] <= (reg_content[15:12]<10)?(8'h30+reg_content[15:12]):(8'h37+reg_content[15:12]);//8'h30 + reg_content[15:12];
+			//strdata[151:144] <= (reg_content[11:8]<10)?(8'h30+reg_content[11:8]):(8'h37+reg_content[11:8]);//8'h30 + reg_content[11:8];
+			//strdata[143:136] <= (reg_content[7:4]<10)?(8'h30+reg_content[7:4]):(8'h37+reg_content[7:4]);//8'h30 + reg_content[7:4];
+			//strdata[135:128] <= (reg_content[3:0]<10)?(8'h30+reg_content[3:0]):(8'h37+reg_content[3:0]);//8'h30 + reg_content[3:0];
+			SW_old <= SW;
+			cls <= 1;
+		end
+		else
+			cls <= 0;
+	end
+	
+	always @(posedge BTN3) begin
+		clk_cnt <= clk_cnt + 1;
+	end
 
-            //2 4-bit waddr
-            strdata[159:152] = (waddr[7:4]<10)?(8'h30 + waddr[7:4]):(8'h37+waddr[7:4]);
-            strdata[151:144] = (waddr[3:0]<10)?(8'h30 + waddr[3:0]):(8'h37+waddr[3:0]);
-            
-            //secondline: state out, instruction type, instruction code
-            strdata[127:120] = (state_out<10)?(8'h30 + state_out):(8'h37 + state_out);
-            strdata[111:104] = (insn_type<10)?(8'h30 + insn_type):(8'h37 + insn_type);
-            strdata[95:88] = (insn_code<10)?(8'h30 + insn_code):(8'h37 + insn_code);
+	assign rst = BTN2;
+	
+	assign pc [31:0] = if_npc[31:0];
+	
+	if_stage x_if_stage(CCLK, BTN3, rst, pc, mem_pc, mem_branch, id_wpcir,
+		if_npc, if_pc4, if_inst, IF_ins_type, IF_ins_number,ID_ins_type,ID_ins_number);
 
-            //2 4-bit pc
-            strdata[79:72] = (pc[7:4]<10)?(8'h30 + pc[7:4]):(8'h37 + pc[7:4]);
-            strdata[71:64] = (pc[3:0]<10)?(8'h30 + pc[3:0]):(8'h37 + pc[3:0]);
+	id_stage x_id_stage(BTN3, rst, if_inst, if_pc4, wb_destR, wb_dest,wb_wreg, 
+		id_wreg, id_m2reg, id_wmem, id_aluc, id_shift, id_aluimm, id_branch, id_pc4, id_inA, id_inB, id_imm, id_regrt,id_rt,id_rd, 
+		ID_ins_type, ID_ins_number, EX_ins_type, EX_ins_number, {1'b0,which_reg}, reg_content, id_wpcir);
+		
+	ex_stage x_ex_stage(BTN3, rst, id_imm, id_inA, id_inB, id_wreg, id_m2reg, id_wmem, id_aluc, id_aluimm,id_shift, id_branch, id_pc4,id_regrt,id_rt,id_rd,
+		ex_wreg, ex_m2reg, ex_wmem, ex_aluR, ex_inB, ex_destR, ex_branch, ex_pc, ex_zero, 
+		EX_ins_type, EX_ins_number, MEM_ins_type, MEM_ins_number);
+	  
+	mem_stage x_mem_stage(BTN3, rst, ex_destR, ex_inB, ex_aluR, ex_wreg, ex_m2reg, ex_wmem, ex_branch,ex_pc,ex_zero,  
+		mem_wreg, mem_m2reg, mem_mdata, mem_aluR, mem_destR, mem_branch, mem_pc,
+		MEM_ins_type, MEM_ins_number, WB_ins_type, WB_ins_number);
 
-            //register content
-            //strdata[55:48] = (alu_ctrl[1:0]<10)?(8'h30 + alu_ctrl[1:0]):(8'h37 + alu_ctrl[1:0]);
+	wb_stage x_wb_stage(BTN3, rst, mem_destR, mem_aluR, mem_mdata, mem_wreg, mem_m2reg, 
+		wb_wreg, wb_dest, wb_destR, WB_ins_type, WB_ins_number,OUT_ins_type, OUT_ins_number);
+		
+endmodule
 
-            //rcontent, for view regs' values. PUSH EAST KEY to view 31:15
-            strdata[31:24] = (rcontent[15:12]<10)?(8'h30 + rcontent[15:12]):(8'h37 + rcontent[15:12]);
-            strdata[23:16] = (rcontent[11:8]<10)?(8'h30 + rcontent[11:8]):(8'h37 + rcontent[11:8]);
-            strdata[15:8]  = (rcontent[7:4]<10)?(8'h30 + rcontent[7:4]):(8'h37 + rcontent[7:4]);
-            strdata[7:0]   = (rcontent[3:0]<10)?(8'h30 + rcontent[3:0]):(8'h37 + rcontent[3:0]);
-
-            cls = 1;
-            
-            pc_old <= pc;
-            mem_data_old <= mem_data;
-            raddr_old <= raddr;
-            waddr_old <= waddr;
-            alu_out_old <= alu_out;
-            rcontent_old <= rcontent;
-        end
-        else
-            cls = 0;
-    end
-
-    mem x_memory(
-        .addra(raddr),
-        .addrb(waddr),
-        .clka(clk),
-        .clkb(clk),
-        .dinb(b_data),
-        .douta(mem_data),
-        .web(write_mem));   
-       
-    ctrl    x_ctrl(clk, rst, ir_data, zero,
-        write_pc, iord, write_mem, write_dr, write_ir, memtoreg, regdst, 
-        pcsource, write_c, alu_ctrl, alu_srcA, alu_srcB, write_a, write_b, write_reg,
-        state_out, insn_type, insn_code, insn_stage);  
-
-    pcm x_pcm(clk, rst, alu_out, c_data, ir_data, pcsource, write_pc, pc);
-    
-    always @(write_ir) begin
-        if (write_ir)
-            ir_data <= mem_data;
-    end
-    
-    always @(write_dr) begin
-        if (write_dr)
-            dr_data <= mem_data;
-    end
-    
-    reg_wrapper x_reg_wrapper(clk, rst, ir_data, dr_data, c_data, memtoreg, regdst, write_reg,
-                                         rdata_A, rdata_B, r6out,SW,rcontent,choose); 
-
-    always @(write_a) begin
-        if (write_a)
-            a_data <= rdata_A;
-    end
-    
-    always @(write_b) begin
-        if (write_b)
-            b_data <= rdata_B;
-    end
-
-    alu_wrapper x_alu_wrapper(a_data, b_data, ir_data, pc, 
-        alu_srcA, alu_srcB, alu_ctrl,
-        zero, alu_out);
-                                         
-    always @(write_c) begin
-        if (write_c)
-            c_data <= alu_out;
-    end
-    
-endmodule  
