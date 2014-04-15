@@ -1,8 +1,8 @@
 The following files were generated for 'dmem' in directory
 Z:\ipcore_dir\
 
-Model Parameter Resolution:
-   Resolves generated model parameter values on the component instance.
+Opens the IP Customization GUI:
+   Allows the user to customize or recustomize the IP instance.
 
    * dmem.mif
 
@@ -28,6 +28,7 @@ IP Symbol Generator:
    Generate an IP symbol based on the current project options'.
 
    * dmem.asy
+   * dmem.mif
 
 SYM file generator:
    Generate a SYM file for compatibility with legacy flows
