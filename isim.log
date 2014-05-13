@@ -1,7 +1,8 @@
 ISim log file
-Running: C:\Users\cszju\Desktop\pipeLineCPU\test_CU_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/cszju/Desktop/pipeLineCPU/test_CU_isim_beh.wdb 
+Running: C:\Users\cszju\Desktop\hisLab2\hisLab2\test_cu_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/cszju/Desktop/hisLab2/hisLab2/test_cu_isim_beh.wdb 
 ISim O.87xd (signature 0xc3576ebc)
 This is a Full version of ISim.
+WARNING: File "C:/Users/cszju/Desktop/hisLab2/hisLab2/test_cu.v" Line 42.  For instance test_cu/uut/, width 4 of formal port cu_aluc is not equal to width 6 of actual signal cu_aluc.
 Time resolution is 1 ps
 # onerror resume
 # wave add /

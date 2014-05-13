@@ -1,18 +1,20 @@
-Running: C:\Xilinx\13.4\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/cszju/Desktop/pipeLineCPU/test_CU_isim_beh.exe -prj C:/Users/cszju/Desktop/pipeLineCPU/test_CU_beh.prj work.test_CU work.glbl 
+Running: C:\Xilinx\13.4\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/cszju/Desktop/hisLab2/hisLab2/test_cu_isim_beh.exe -prj C:/Users/cszju/Desktop/hisLab2/hisLab2/test_cu_beh.prj work.test_cu work.glbl 
 ISim O.87xd (signature 0xc3576ebc)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Analyzing Verilog file "C:/Users/cszju/Desktop/pipeLineCPU/control_unit.v" into library work
-Analyzing Verilog file "C:/Users/cszju/Desktop/pipeLineCPU/cu_test.v" into library work
+Analyzing Verilog file "C:/Users/cszju/Desktop/hisLab2/hisLab2/ctrl_unit.V" into library work
+Analyzing Verilog file "C:/Users/cszju/Desktop/hisLab2/hisLab2/test_cu.v" into library work
 Analyzing Verilog file "C:/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
+WARNING:HDLCompiler:189 - "C:/Users/cszju/Desktop/hisLab2/hisLab2/test_cu.v" Line 75: Size mismatch in connection of port <cu_aluc>. Formal port size is 4-bit while actual signal size is 6-bit.
 Completed static elaboration
 Compiling module ctrl_unit
-Compiling module test_CU
+Compiling module test_cu
 Compiling module glbl
 Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
 Compiled 3 Verilog Units
-Built simulation executable C:/Users/cszju/Desktop/pipeLineCPU/test_CU_isim_beh.exe
-Fuse Memory Usage: 28236 KB
+Built simulation executable C:/Users/cszju/Desktop/hisLab2/hisLab2/test_cu_isim_beh.exe
+Fuse Memory Usage: 28136 KB
 Fuse CPU Usage: 296 ms

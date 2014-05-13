@@ -69,3 +69,7 @@ _xmsgs/
 
 Thumbs.db
 .DS_Store
+
+#sublime projects
+*.sublime-workspace
+*.sublime-project

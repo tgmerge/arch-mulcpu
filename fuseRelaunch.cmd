@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/cszju/Desktop/pipeLineCPU/test_CU_isim_beh.exe" -prj "C:/Users/cszju/Desktop/pipeLineCPU/test_CU_beh.prj" "work.test_CU" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/cszju/Desktop/hisLab2/hisLab2/test_cu_isim_beh.exe" -prj "C:/Users/cszju/Desktop/hisLab2/hisLab2/test_cu_beh.prj" "work.test_cu" "work.glbl" 
